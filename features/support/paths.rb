@@ -13,6 +13,9 @@ module NavigationHelpers
       when /the home\s?page/
         '/'
 
+      when /forward-slash/
+        '/'
+
       when /a b c/
         '/a%20b%20c'
 

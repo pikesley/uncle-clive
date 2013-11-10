@@ -64,7 +64,7 @@ Feature: view pages
 
   @wip
   Scenario: Do the right thing with a "/"
-    When I go to "//"
+    When I go to "/forward-slash"
     Then the response should be JSON:
     """
     {
