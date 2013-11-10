@@ -8,7 +8,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
-Capybara.app = UncleClive
+Capybara.app = Spectrum
 
 class SpectrumWorld
   include Capybara::DSL
