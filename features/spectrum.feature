@@ -24,7 +24,7 @@ Feature: view pages
   }
   """
 
-  Scenario: Get JSON longer string
+  Scenario: Get JSON for longer string
     When I go to "/1982"
     Then the response should be JSON:
     """
