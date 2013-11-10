@@ -4,20 +4,31 @@ require 'curb'
 require 'uri'
 require 'json'
 
-text = "© 1982 Sinclair Research Ltd."
-text = "© 1982"
+strings  = [
+    '© 1982',
+    'LOAD ""'
+]
+on_char  = "[]"
+off_char = " " * on_char.length
+
 if ARGV[0]
-  text = ARGV[0]
+  strings = [
+      ARGV[0]
+  ]
 end
 
 ssfaas = 'http://uncleclive.herokuapp.com/'
-full_url = URI.join ssfaas, URI.encode(text)
 
-c = Curl::Easy.new("%s" % full_url)
-c.perform
-lines = JSON::parse(c.body_str)["data"]
+strings.each do |s|
+  full_url = URI.join ssfaas, URI.encode(s)
 
-lines.each do |line|
-  s = line.join("")
-  puts s.gsub("1", "[]").gsub("0", "  ")
+  c = Curl::Easy.new("%s" % full_url)
+  c.perform
+  lines = JSON::parse(c.body_str)["data"]
+
+  lines.each do |line|
+    s = line.join("")
+    puts s.gsub("1", on_char).gsub("0", off_char)
+  end
+
 end
