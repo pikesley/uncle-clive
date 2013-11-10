@@ -30,4 +30,4 @@ Hit [http://uncleclive.herokuapp.com/%C2%A9%201982](http://uncleclive.herokuapp.
 }
 ```
 
-and then find something useful to do with those arrays of bits
+and then find something useful to do with those arrays of bits. See `examples/console.rb` for a (hacky) example

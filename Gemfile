@@ -8,6 +8,7 @@ gem 'sinatra'
 gem 'rake'
 gem 'travis'
 gem 'json'
+gem 'curb'
 
 group :test do
   gem 'capybara-webkit'
