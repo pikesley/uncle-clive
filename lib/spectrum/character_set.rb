@@ -2,8 +2,12 @@ require 'json'
 
 module Spectrum
   class CharacterSet
+    attr_accessor :on_char, :off_char
+
     def initialize char_set_file = "conf/character_set.txt"
       @chars = {}
+      @on_char = "1"
+      @off_char = "0"
       File.open(char_set_file).readlines.each do |line|
         pieces = line.match(/^(.)  *(.*)/)
         key    = pieces[1]
@@ -33,7 +37,7 @@ module Spectrum
         index = 0
       end
 
-      a.join "\n"
+      a.join("\n").gsub("1", @on_char).gsub("0", @off_char)
     end
 
     def bytes s

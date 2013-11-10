@@ -50,5 +50,20 @@ module Spectrum
 01000010
 00111100"""
     end
+
+    it "should return characters other than 0's and 1's" do
+      cs = CharacterSet.new
+      cs.on_char = "X"
+      cs.off_char = "."
+      cs.get("Sam").should ==
+          """........................
+..XXXX..................
+.X........XXX....XX.X...
+..XXXX.......X...X.X.X..
+......X...XXXX...X.X.X..
+.X....X..X...X...X.X.X..
+..XXXX....XXXX...X.X.X..
+........................"""
+    end
   end
 end
