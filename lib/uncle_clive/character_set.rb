@@ -41,7 +41,9 @@ module UncleClive
     end
 
     def get_txt s
-      self.get(s).join("\n").gsub("1", @on_char).gsub("0", @off_char)
+      t = self.get(s)
+      t.map! { |u| u.join("")}
+      t.join("\n").gsub("1", @on_char).gsub("0", @off_char)
     end
 
     def bytes s
@@ -57,16 +59,7 @@ module UncleClive
     def get_json s
       h = {}
       h[:id] = s
-      h[:data] = [
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0]
-      ]
+      h[:data] = self.get(s)
 
       h.to_json
     end
