@@ -10,9 +10,9 @@
 
 You may see a more pointless Thing-as-a-Service today, but I hope not
 
-It's running at [http://uncleclive.herokuapp.com/]()
+It's running at [http://uncleclive.herokuapp.com/](http://uncleclive.herokuapp.com/)
 
-Hit [http://uncleclive.herokuapp.com/%C2%A9%201982]() to get
+Hit [http://uncleclive.herokuapp.com/%C2%A9%201982](http://uncleclive.herokuapp.com/%C2%A9%201982) to get
 
 ```
 {
