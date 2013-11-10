@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'spectrum/version'
+require 'uncle_clive/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = "spectrum"
-  spec.version     = Spectrum::VERSION
+  spec.name        = "uncle-clive"
+  spec.version     = UncleClive::VERSION
   spec.authors     = ["pikesley"]
   spec.email       = ["github@orgraphone.org"]
   spec.description = %q{pointlessly generate the Sinclair Spectrum character set}

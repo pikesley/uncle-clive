@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Spectrum
+module UncleClive
   describe CharacterSet do
     it "should have the correct keys and values" do
       cs = CharacterSet.new

@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in spectrum.gemspec
+#ruby=ruby-2.0.0
+#ruby-gemset=uncle-clive
+
+# Specify your gem's dependencies in uncle-clive.gemspec
 gemspec

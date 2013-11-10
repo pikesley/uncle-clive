@@ -1,6 +1,6 @@
 require 'json'
 
-module Spectrum
+module UncleClive
   class CharacterSet
     attr_accessor :on_char, :off_char
 
