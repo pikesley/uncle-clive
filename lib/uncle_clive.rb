@@ -3,6 +3,10 @@ require_relative "uncle_clive/character_set"
 require 'sinatra/base'
 
 class Spectrum < Sinatra::Base
+  get '/' do
+    "Nothing to see here"
+  end
+
   get '/:text' do
     cs = UncleClive::CharacterSet.new
     cs.get_json(params[:text].to_s)

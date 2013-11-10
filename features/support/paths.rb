@@ -10,6 +10,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+      when /the home\s?page/
+        '/'
+
       when /a b c/
         '/a%20b%20c'
 
