@@ -51,6 +51,19 @@ module Spectrum
 00111100"""
     end
 
+    it "should recognise ' ' as a key" do
+      cs = CharacterSet.new
+      cs.get(" ").should ==
+      """00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000
+00000000"""
+    end
+
     it "should return characters other than 0's and 1's" do
       cs = CharacterSet.new
       cs.on_char = "X"
