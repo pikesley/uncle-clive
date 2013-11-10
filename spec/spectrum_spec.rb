@@ -112,5 +112,22 @@ module UncleClive
           ]
       }.to_json
     end
+
+    it "should handle a non-existent key gracefully" do
+      cs = CharacterSet.new
+      cs.get_json('€').should == {
+         :id => "€",
+         :data =>  [
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0]
+         ]
+      }.to_json
+    end
   end
 end

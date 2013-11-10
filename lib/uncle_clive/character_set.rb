@@ -47,7 +47,7 @@ module UncleClive
     end
 
     def bytes s
-      a = @chars[s]
+      a = @chars[s] ||= @chars[" "]
       b = []
       a.each do |int|
         b << ("%08d" % int.to_s(2)).split("").map { |i| i.to_i }
