@@ -1,3 +1,8 @@
 language: ruby
 rvm:
 - 2.0.0
+deploy:
+  provider: heroku
+  app: uncle-clive
+  api_key:
+    secure: a62fNBAJJaRcCTC0speNZCoH61dpR0WNgDIVt1kj5cNNvB+dNdUtWWHBGVWdEW9++f9DQFCS/7Lsn+7EKMmyZ1uyQKxJhyvX5hCbdyDVK9/WAOonCgMbx1r2aD3J1v02gSEs5lVs/Z3yrLy9gfwNWdR7l9IPl1p43Rg2YdPya2Y=
