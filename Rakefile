@@ -7,5 +7,5 @@ Cucumber::Rake::Task.new
 task :default => [:spec, :cucumber]
 
 task :run do
-  ruby 'lib/overlook.rb'
+  ruby 'lib/uncle_clive.rb'
 end

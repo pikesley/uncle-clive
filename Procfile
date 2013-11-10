@@ -1,1 +1,1 @@
-web: bundle exec ruby lib/uncle-clive.rb
+web: bundle exec ruby lib/uncle_clive.rb
