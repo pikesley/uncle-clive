@@ -146,5 +146,22 @@ module UncleClive
           ]
       }.to_json
     end
+
+    it "should know what a forward-slash is" do
+      cs = CharacterSet.new
+      cs.get_json("/").should == {
+          :id => "/",
+          :data => [
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 1, 0],
+              [0, 0, 0, 0, 0, 1, 0, 0],
+              [0, 0, 0, 0, 1, 0, 0, 0],
+              [0, 0, 0, 1, 0, 0, 0, 0],
+              [0, 0, 1, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0]
+          ]
+      }.to_json
+    end
   end
 end
