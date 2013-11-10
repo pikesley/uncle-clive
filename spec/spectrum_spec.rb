@@ -12,7 +12,7 @@ module UncleClive
       cs.bytes(" ")[0].should == [0, 0, 0, 0, 0, 0, 0, 0]
     end
 
-    it "should give us a correct character"  do
+    it "should give us a correct character" do
       cs = CharacterSet.new
       cs.get_txt("a").should ==
           "" "00000000
@@ -116,17 +116,34 @@ module UncleClive
     it "should handle a non-existent key gracefully" do
       cs = CharacterSet.new
       cs.get_json('€').should == {
-         :id => "€",
-         :data =>  [
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0],
-             [0, 0, 0, 0, 0, 0, 0, 0]
-         ]
+          :id   => "€",
+          :data => [
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0]
+          ]
+      }.to_json
+    end
+
+    it "should recognise a double-quote as a key" do
+      cs = CharacterSet.new
+      cs.get_json('"').should == {
+          :id   => '"',
+          :data => [
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 1, 0, 0, 1, 0, 0],
+              [0, 0, 1, 0, 0, 1, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0]
+          ]
       }.to_json
     end
   end
