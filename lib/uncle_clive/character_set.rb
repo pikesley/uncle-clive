@@ -5,8 +5,8 @@ module UncleClive
     attr_accessor :on_char, :off_char
 
     def initialize char_set_file = "conf/character_set.txt"
-      @chars = {}
-      @on_char = "1"
+      @chars    = {}
+      @on_char  = "1"
       @off_char = "0"
       File.open(char_set_file).readlines.each do |line|
         pieces = line.match(/^(.)  *(.*)/)
@@ -28,8 +28,8 @@ module UncleClive
       s.chars.each do |u|
         self.bytes(u).each do |byte|
           begin
-            a[index] << byte
-          rescue NoMethodError
+            a[index] += byte
+          rescue NameError
             a[index] = byte
           end
           index += 1
@@ -37,21 +37,38 @@ module UncleClive
         index = 0
       end
 
-      a.join("\n").gsub("1", @on_char).gsub("0", @off_char)
+      a
+    end
+
+    def get_txt s
+      self.get(s).join("\n").gsub("1", @on_char).gsub("0", @off_char)
     end
 
     def bytes s
       a = @chars[s]
       b = []
       a.each do |int|
-        b << "%08d" % int.to_s(2)
+        b << ("%08d" % int.to_s(2)).split("").map { |i| i.to_i }
       end
 
       b
     end
 
-    def to_json
-      JSON.generate @chars
+    def get_json s
+      h = {}
+      h[:id] = s
+      h[:data] = [
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0]
+      ]
+
+      h.to_json
     end
   end
 end
