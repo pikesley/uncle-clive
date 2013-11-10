@@ -30,5 +30,4 @@ strings.each do |s|
     s = line.join("")
     puts s.gsub("1", on_char).gsub("0", off_char)
   end
-
 end
