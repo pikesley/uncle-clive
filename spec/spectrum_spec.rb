@@ -1,19 +1,19 @@
 require 'spec_helper'
 
 module UncleClive
-  describe CharacterSet do
+  describe FontGenerator do
     it "should have the correct keys and values" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.fetch("a").should == [0, 0, 56, 4, 60, 68, 60, 0]
     end
 
     it "should give us an array of bits" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.bytes(" ")[0].should == [0, 0, 0, 0, 0, 0, 0, 0]
     end
 
     it "should give us a correct character" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_txt("a").should ==
           "" "00000000
 00000000
@@ -26,7 +26,7 @@ module UncleClive
     end
 
     it "should give us a correct string" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_txt("ab").should ==
           "" "0000000000000000
 0000000000100000
@@ -39,7 +39,7 @@ module UncleClive
     end
 
     it "should be able to handle keys like ©" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_txt("©").should ==
           "" "00111100
 01000010
@@ -52,7 +52,7 @@ module UncleClive
     end
 
     it "should recognise ' ' as a key" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_txt(" ").should ==
           "" "00000000
 00000000
@@ -65,7 +65,7 @@ module UncleClive
     end
 
     it "should return characters other than 0's and 1's" do
-      cs          = CharacterSet.new
+      cs          = FontGenerator.new
       cs.on_char  = "X"
       cs.off_char = "."
       cs.get_txt("Sam").should ==
@@ -80,7 +80,7 @@ module UncleClive
     end
 
     it "should return JSON" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_json(" ").should == {
           :id   => " ",
           :data => [
@@ -97,7 +97,7 @@ module UncleClive
     end
 
     it "should return JSON for longer strings" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_json("1982").should == {
           :id   => "1982",
           :data => [
@@ -114,7 +114,7 @@ module UncleClive
     end
 
     it "should handle a non-existent key gracefully" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_json('€').should == {
           :id   => "€",
           :data => [
@@ -131,7 +131,7 @@ module UncleClive
     end
 
     it "should recognise a double-quote as a key" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_json('"').should == {
           :id   => '"',
           :data => [
@@ -148,7 +148,7 @@ module UncleClive
     end
 
     it "should know what a forward-slash is" do
-      cs = CharacterSet.new
+      cs = FontGenerator.new
       cs.get_json("/").should == {
           :id => "/",
           :data => [
