@@ -5,6 +5,7 @@ ruby '2.0.0'
 #ruby-gemset=uncle-clive
 
 gem 'sinatra'
+gem 'thin'
 gem 'rake'
 gem 'travis'
 gem 'json'
