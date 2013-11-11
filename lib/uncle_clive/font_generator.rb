@@ -1,7 +1,7 @@
 require 'json'
 
 module UncleClive
-  class CharacterSet
+  class FontGenerator
     attr_accessor :on_char, :off_char
 
     def initialize char_set_file = "conf/character_set.txt"

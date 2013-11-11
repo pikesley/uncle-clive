@@ -1,5 +1,5 @@
 require_relative "uncle_clive/version"
-require_relative "uncle_clive/character_set"
+require_relative "uncle_clive/font_generator"
 require 'sinatra/base'
 
 class Spectrum < Sinatra::Base
@@ -8,7 +8,7 @@ class Spectrum < Sinatra::Base
   end
 
   get '/:text' do
-    cs = UncleClive::CharacterSet.new
+    cs = UncleClive::FontGenerator.new
     cs.get_json(params[:text].to_s)
   end
 
