@@ -7,8 +7,8 @@ Feature: view pages
 
   @json
   Scenario: Get JSON for single character
+    Given I request JSON
     When I go to "/a"
-    And I request JSON
     Then the response should be JSON:
     """
   {
@@ -27,6 +27,7 @@ Feature: view pages
   """
 
   Scenario: Get JSON for longer string
+    Given I request JSON
     When I go to "/1982"
     Then the response should be JSON:
     """
@@ -46,6 +47,7 @@ Feature: view pages
     """
 
   Scenario: Handle embedded spaces correctly
+    Given I request JSON
     When I go to "/a b c"
     Then the response should be JSON:
     """
@@ -66,6 +68,7 @@ Feature: view pages
 
   @wip
   Scenario: Do the right thing with a "/"
+    Given I request JSON
     When I go to "/forward-slash"
     Then the response should be JSON:
     """
