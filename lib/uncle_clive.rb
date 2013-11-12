@@ -9,9 +9,16 @@ class Spectrum < Sinatra::Base
 
   get '/:text' do
     cs = UncleClive::FontGenerator.new
-    cs.get_json(params[:text].to_s)
+    request.accept.each do |type|
+      case type.to_s
+        when 'application/json'
+          halt cs.get_json(params[:text])
+        else
+          halt "Unknown content-type"
+      end
+    end
   end
 
-  # start the server if ruby file executed directly
+# start the server if ruby file executed directly
   run! if app_file == $0
 end

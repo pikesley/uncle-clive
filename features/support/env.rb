@@ -8,6 +8,15 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
+# Fully Cargo-culted from
+# http://stackoverflow.com/questions/5098626/how-to-test-posts-in-rails-capybara-cucumber-or-rspec
+#module CapybaraApp
+#  def app; Capybara.app; end
+#end
+#World(CapybaraApp)
+#World(Rack::Test::Methods)
+# CC ends
+
 Capybara.app = Spectrum
 
 class SpectrumWorld

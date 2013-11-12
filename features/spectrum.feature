@@ -5,8 +5,10 @@ Feature: view pages
     Then I should see "Nothing to see here"
     And I should see "Try adding some text onto the end of the URL"
 
+  @json
   Scenario: Get JSON for single character
     When I go to "/a"
+    And I request JSON
     Then the response should be JSON:
     """
   {

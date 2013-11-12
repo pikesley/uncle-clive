@@ -120,6 +120,7 @@ DEPENDENCIES
   cucumber-sinatra
   curb
   json
+  rack-test
   rake
   rspec
   sinatra
