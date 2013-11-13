@@ -10,6 +10,7 @@ gem 'rake'
 gem 'travis'
 gem 'json'
 gem 'curb'
+gem 'haml'
 
 group :test do
   gem 'capybara-webkit'

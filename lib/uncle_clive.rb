@@ -4,10 +4,11 @@ require_relative "uncle_clive/decorators/text_decorator"
 require_relative "uncle_clive/decorators/json_decorator"
 require_relative "uncle_clive/decorators/html_table_decorator"
 require 'sinatra/base'
+require 'haml'
 
 class Spectrum < Sinatra::Base
   get '/' do
-    "Nothing to see here. Try adding some text onto the end of the URL"
+    haml :index
   end
 
   get '/:text' do

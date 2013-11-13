@@ -4,7 +4,7 @@ Feature: view HTML pages
   Scenario: Get the home page
     Given I am on "the home page"
     Then I should see "Nothing to see here"
-    And I should see "Try adding some text onto the end of the URL"
+    And I should see "Try this"
 
   Scenario: Get a single character
     When I go to "/a"
