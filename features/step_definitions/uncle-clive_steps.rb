@@ -4,6 +4,5 @@ end
 
 When(/^I request JSON$/) do
   add_headers({'Accept' => 'application/json'})
-  add_headers({'Content-Type' => 'application/json'})
 end
 
