@@ -2,23 +2,24 @@
 %html(lang="en")
   %head
     %title Nothing to see here
-    %link{:rel => 'stylesheet', :href => '../bootstrap.css', :type => "text/css"}
-    %link{:rel => 'stylesheet', :href => '../launch.css', :type => "text/css"}
+    %link{:rel => 'stylesheet', :href => 'http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css', :type => "text/css"}
     %link{:rel => 'stylesheet', :href => '../sinclair.css', :type => "text/css"}
 
   %body
-    .topbar
-      .fill
-        .container
-          %a{:class => "brand", :href => "http://pikesley.github.io/uncle-clive"}Uncle Clive
+    .body
+      .container
+        .hero-unit
+          %h1 Uncle Clive
+          %h2 Sinclair Spectrum Font as a Service
+          %p Please see README for use
 
     .container
       .content
-        .page-header
-          %h1= title
+        %h2{:id => 'introduction'}Introduction
 
-        #sinclair
-          = table
+        %h2{:id => 'content-negotiatiom'}Content negotiation
+
+        %h2{:id => 'API'}API
 
       %footer
         %p

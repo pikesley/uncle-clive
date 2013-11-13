@@ -8,17 +8,21 @@
 [![Code Climate](https://codeclimate.com/github/pikesley/uncle-clive.png)](https://codeclimate.com/github/pikesley/uncle-clive)
 [![Dependency Status](https://gemnasium.com/pikesley/uncle-clive.png)](https://gemnasium.com/pikesley/uncle-clive)
 
-You may see a more pointless Thing-as-a-Service today, but I hope not. Mostly an exercise in me learning how to do REST and conneg (and possibly semver)
+#Introduction
+
+You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm almost 100% certain does not exist - rendering the 1982 Sinclair Spectrum character set in various interesting ways.
+
+It's mostly an exercise in me learning how to do REST and conneg (and possibly semver).
 
 It's running at [http://uncleclive.herokuapp.com/](http://uncleclive.herokuapp.com/)
 
 ##Content negotiation
 
-###JSON
+Uncle-Clive will respond to the following _Accept_ values with appropriate content:
 
-Try `curl -H 'Accept: application/json' "http://uncleclive.herokuapp.com/%C2%A9%201982"`
+###application/json
 
-to get back something like
+Content will be returned as a JSON object thus:
 
 ```
 {
@@ -36,13 +40,9 @@ to get back something like
 }
 ```
 
-###HTML
+###text/plain
 
-Hit the [same URL](http://uncleclive.herokuapp.com/%C2%A9%201982) with a browser to see it rendered with as an HTML table
-
-###Text
-
-If you hit it with `Accept: text/text` then you'll get back something like
+Content will be returned as plain text formatted thus:
 
 ```
 .
@@ -55,4 +55,14 @@ If you hit it with `Accept: text/text` then you'll get back something like
 .
 ```
 
-See `examples/console.rb` for a (hacky) example of this one
+See `examples/console.rb` for an example
+
+###text/html
+
+Content will be returned as an HTML page with a Twitter Bootstrap hero unit containing the data rendered as a table.
+
+##API
+
+####/:text
+
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
