@@ -4,10 +4,11 @@ module UncleClive
   describe FontGenerator do
     before :each do
       @cs = FontGenerator.new
+      @cs.decorator = UncleClive::Decorators::JSONDecorator.new
     end
 
     it "should return JSON" do
-      @cs.get_json(" ").should == {
+      @cs[' '].should == {
           :id   => " ",
           :data => [
               [0, 0, 0, 0, 0, 0, 0, 0],
@@ -23,7 +24,7 @@ module UncleClive
     end
 
     it "should return JSON for longer strings" do
-      @cs.get_json("1982").should == {
+      @cs['1982'].should == {
           :id   => "1982",
           :data => [
               [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -39,7 +40,7 @@ module UncleClive
     end
 
     it "should handle a non-existent key gracefully" do
-      @cs.get_json('€').should == {
+      @cs['€'].should == {
           :id   => "€",
           :data => [
               [0, 0, 0, 0, 0, 0, 0, 0],
@@ -55,7 +56,7 @@ module UncleClive
     end
 
     it "should recognise a double-quote as a key" do
-      @cs.get_json('"').should == {
+      @cs['"'].should == {
           :id   => '"',
           :data => [
               [0, 0, 0, 0, 0, 0, 0, 0],
@@ -71,7 +72,7 @@ module UncleClive
     end
 
     it "should know what a forward-slash is" do
-      @cs.get_json("/").should == {
+      @cs['/'].should == {
           :id   => "/",
           :data => [
               [0, 0, 0, 0, 0, 0, 0, 0],

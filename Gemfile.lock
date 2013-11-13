@@ -44,6 +44,8 @@ GEM
       net-http-pipeline
     gherkin (2.12.2)
       multi_json (~> 1.3)
+    haml (4.0.4)
+      tilt
     highline (1.6.20)
     json (1.8.1)
     launchy (2.3.0)
@@ -119,6 +121,7 @@ DEPENDENCIES
   cucumber
   cucumber-sinatra
   curb
+  haml
   json
   rack-test
   rake

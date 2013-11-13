@@ -4,10 +4,11 @@ module UncleClive
   describe FontGenerator do
     before :each do
       @cs = FontGenerator.new
+      @cs.decorator = UncleClive::Decorators::TextDecorator.new
     end
 
     it "should give us a correct character" do
-      @cs.get_txt("a").should ==
+      @cs["a"].should ==
           """00000000
 00000000
 00111000
@@ -19,7 +20,7 @@ module UncleClive
     end
 
     it "should give us a correct string" do
-      @cs.get_txt("ab").should ==
+      @cs["ab"].should ==
           """0000000000000000
 0000000000100000
 0011100000100000
@@ -31,7 +32,7 @@ module UncleClive
     end
 
     it "should be able to handle keys like ©" do
-      @cs.get_txt("©").should ==
+      @cs["©"].should ==
           """00111100
 01000010
 10011001
@@ -43,7 +44,7 @@ module UncleClive
     end
 
     it "should recognise ' ' as a key" do
-      @cs.get_txt(" ").should ==
+      @cs[" "].should ==
           """00000000
 00000000
 00000000
@@ -54,11 +55,9 @@ module UncleClive
 00000000"""
     end
 
-    # this should come via a decorator
     it "should return characters other than 0's and 1's" do
-      @cs.on_char  = "X"
-      @cs.off_char = "."
-      @cs.get_txt("Sam").should ==
+      @cs.decorator = UncleClive::Decorators::TextDecorator.new({:on => 'X', :off => '.'})
+      @cs["Sam"].should ==
           """........................
 ..XXXX..................
 .X........XXX....XX.X...
