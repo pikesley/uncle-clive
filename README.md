@@ -54,3 +54,5 @@ If you hit it with `Accept: text/text` then you'll get back something like
 .    [][][][][]      [][][][]        [][][][]      [][][][][][]
 .
 ```
+
+See `examples/console.rb` for a (hacky) example of this one
