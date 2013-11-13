@@ -2,14 +2,15 @@
 %html(lang="en")
   %head
     %title Nothing to see here
-
+    %link{:rel => 'stylesheet', :href => '../bootstrap.css', :type => "text/css"}
+    %link{:rel => 'stylesheet', :href => '../launch.css', :type => "text/css"}
     %link{:rel => 'stylesheet', :href => '../sinclair.css', :type => "text/css"}
 
   %body
     .topbar
       .fill
         .container
-          %a{:class => "brand", :href => ""}Uncle Clive
+          %a{:class => "brand", :href => "http://pikesley.github.io/uncle-clive"}Uncle Clive
 
     .container
       .content
@@ -20,4 +21,5 @@
           = table
 
       %footer
-        %p lolwut?
+        %p
+          %a{:href => "http://github.com/pikesley/uncle-clive"}Source on Github
