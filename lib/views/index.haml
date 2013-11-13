@@ -4,6 +4,7 @@
     %title Nothing to see here
     %link{:rel => 'stylesheet', :href => '../bootstrap.css', :type => "text/css"}
     %link{:rel => 'stylesheet', :href => '../launch.css', :type => "text/css"}
+    %link{:rel => 'stylesheet', :href => '../sinclair.css', :type => "text/css"}
 
   %body
     .topbar
@@ -14,11 +15,10 @@
     .container
       .content
         .page-header
-          .h1= title
-        .row
-          .span14
-            #sinclair
-              = table
+          %h1= title
+
+        #sinclair
+          = table
 
       %footer
-        <p>lolwut?</p>
+        %p lolwut?

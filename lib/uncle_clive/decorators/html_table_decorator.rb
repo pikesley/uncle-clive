@@ -5,10 +5,10 @@ module UncleClive
         s = '<!-- %s -->' % [
             key
         ]
-        s << '<table>'
+        s << '<table class="sinclair">'
 
         font_generator.get(key).each do |line|
-          s << '<tr>'
+          s << '<tr class="sinclair">'
           line.each do |bit|
             s << '<td class="%s"> </td>' % (
             bit == 1 ? "on" : "off"
