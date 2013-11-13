@@ -10,7 +10,7 @@
 
 #Introduction
 
-You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm almost 100% certain does not exist - rendering the 1982 Sinclair Spectrum character set in various interesting ways.
+You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm _almost 100% certain does not exist_ - rendering text in the 1982 Sinclair Spectrum character set.
 
 It's mostly an exercise in me learning how to do REST and conneg (and possibly semver).
 
