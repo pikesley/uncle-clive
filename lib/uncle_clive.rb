@@ -34,7 +34,7 @@ class Spectrum < Sinatra::Base
               :table => cs[params[:text]]
           }
 
-        when 'text/text'
+        when 'text/plain'
           cs.decorator = UncleClive::Decorators::TextDecorator.new
           cs.decorator.on = "[]"
           halt cs[params[:text]]
