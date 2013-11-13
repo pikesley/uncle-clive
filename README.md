@@ -8,11 +8,17 @@
 [![Code Climate](https://codeclimate.com/github/pikesley/uncle-clive.png)](https://codeclimate.com/github/pikesley/uncle-clive)
 [![Dependency Status](https://gemnasium.com/pikesley/uncle-clive.png)](https://gemnasium.com/pikesley/uncle-clive)
 
-You may see a more pointless Thing-as-a-Service today, but I hope not
+You may see a more pointless Thing-as-a-Service today, but I hope not. Mostly an exercise in me learning how to do REST and conneg (and possibly semver)
 
 It's running at [http://uncleclive.herokuapp.com/](http://uncleclive.herokuapp.com/)
 
-Hit [http://uncleclive.herokuapp.com/%C2%A9%201982](http://uncleclive.herokuapp.com/%C2%A9%201982) to get
+##Content negotiation
+
+###JSON
+
+Try `curl -H 'Accept: application/json' "http://uncleclive.herokuapp.com/%C2%A9%201982"`
+
+to get back something like
 
 ```
 {
@@ -30,4 +36,21 @@ Hit [http://uncleclive.herokuapp.com/%C2%A9%201982](http://uncleclive.herokuapp.
 }
 ```
 
-and then find something useful to do with those arrays of bits. See `examples/console.rb` for a (hacky) example
+###HTML
+
+Hit the [same URL](http://uncleclive.herokuapp.com/%C2%A9%201982) with a browser to see it rendered with as an HTML table
+
+###Text
+
+If you hit it with `Accept: text/text` then you'll get back something like
+
+```
+.
+.      [][]          [][][][]        [][][][]        [][][][]
+.    []  []        []        []    []        []    []        []
+.        []        []        []      [][][][]                []
+.        []          [][][][][]    []        []      [][][][]
+.        []                  []    []        []    []
+.    [][][][][]      [][][][]        [][][][]      [][][][][][]
+.
+```
