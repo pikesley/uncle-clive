@@ -16,7 +16,8 @@ class Spectrum < Sinatra::Base
         when 'application/html'
           halt cs.get_json(params[:text])
         else
-          halt "Unknown typee"
+          p halt cs.get_json(params[:text])
+
       end
     end
   end
