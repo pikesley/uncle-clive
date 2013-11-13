@@ -1,20 +1,7 @@
-table,
-tbody,
-tr,
-th,
-td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 100%;
-    line-height: 1;
-    font-family: inherit;
-}
+@import 'bootstrap.css';
+@import 'launch.css';
 
-body table.sinclair, td.sinclair, tr.sinclair { padding: 0px; margin: 0px; border: 0px; }
-table, table.sinclair {display: inline; width: 1%; }
-td { height: 3px; width: 3px; font-size: 0.01em; }
+table.sinclair, td.sinclair, tr.sinclair { padding: 0px; margin: 0px; border: 0px; font-size: 0.01em; }
+td { height: 3px; width: 3px; font-size: 0.01em; border: 0px; }
 td.on { background-color: #000; }
 td.off { background: transparent; }
