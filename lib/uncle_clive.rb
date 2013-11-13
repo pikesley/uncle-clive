@@ -25,7 +25,6 @@ class Spectrum < Sinatra::Base
         when 'text/text'
           cs.decorator = UncleClive::Decorators::TextDecorator.new
           cs.decorator.on = "[]"
-          cs.decorator.off = "  "
           halt cs[params[:text]]
         else
           halt "Nope"
