@@ -1,6 +1,7 @@
 module UncleClive
   module Decorators
     class TextDecorator
+      attr_accessor :on, :off
       def initialize args = {}
         @on  = args[:on] ||= '1'
         @off = args[:off] ||= '0'

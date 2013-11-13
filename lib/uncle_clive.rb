@@ -22,6 +22,11 @@ class Spectrum < Sinatra::Base
         when 'text/html'
           cs.decorator = UncleClive::Decorators::JSONDecorator.new
           halt cs[params[:text]]
+        when 'text/text'
+          cs.decorator = UncleClive::Decorators::TextDecorator.new
+          cs.decorator.on = "[]"
+          cs.decorator.off = "  "
+          halt cs[params[:text]]
         else
           halt "Nope"
 #          halt cs.get_json(params[:text])
