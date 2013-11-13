@@ -1,8 +1,9 @@
 require 'json'
+require 'pry'
 
 module UncleClive
   class FontGenerator
-    attr_accessor :on_char, :off_char
+    attr_accessor :decorator, :on_char, :off_char
 
     def initialize char_set_file = "conf/character_set.txt"
       @chars    = {}
@@ -17,8 +18,22 @@ module UncleClive
       end
     end
 
+    def raw_data key
+      @chars[key]
+    end
+
     def fetch key
       @chars[key]
+    end
+
+    def [] key
+      result = self.get key.to_s
+
+      if @decorator
+        @decorator.render self, key
+      else
+        result
+      end
     end
 
     def get s
@@ -40,12 +55,6 @@ module UncleClive
       a
     end
 
-    def get_txt s
-      t = self.get(s)
-      t.map! { |u| u.join("")}
-      t.join("\n").gsub("1", @on_char).gsub("0", @off_char)
-    end
-
     def bytes s
       a = @chars[s] ||= @chars[" "]
       b = []
@@ -54,22 +63,6 @@ module UncleClive
       end
 
       b
-    end
-
-    def get_json s
-      h = {}
-      h[:id] = s
-      h[:data] = self.get(s)
-
-      h.to_json
-    end
-
-    def get_xml s
-      h = {}
-      h[:id]
-      h[:data] = self.get(s)
-
-      h.to_xml
     end
   end
 end

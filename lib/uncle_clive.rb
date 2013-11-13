@@ -1,5 +1,7 @@
 require_relative "uncle_clive/version"
 require_relative "uncle_clive/font_generator"
+require_relative "uncle_clive/decorators/text_decorator"
+require_relative "uncle_clive/decorators/json_decorator"
 require 'sinatra/base'
 
 class Spectrum < Sinatra::Base
@@ -8,16 +10,19 @@ class Spectrum < Sinatra::Base
   end
 
   get '/:text' do
+#    puts ">>> %s <<<" % request.accept
     cs = UncleClive::FontGenerator.new
     request.accept.each do |type|
       case type.to_s
         when 'application/json'
-          halt cs.get_json(params[:text])
-        when 'application/html'
-          halt cs.get_json(params[:text])
+          cs.decorator = UncleClive::Decorators::JSONDecorator.new
+          halt cs[params[:text]]
+        when 'text/html'
+          cs.decorator = UncleClive::Decorators::JSONDecorator.new
+          halt cs[params[:text]]
         else
-          p halt cs.get_json(params[:text])
-
+          halt "Nope"
+#          halt cs.get_json(params[:text])
       end
     end
   end
