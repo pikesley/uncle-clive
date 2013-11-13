@@ -64,7 +64,7 @@ Feature: get JSON
   @wip
   Scenario: Do the right thing with a "/"
     Given I request JSON
-    When I go to "/forward-slash"
+    When I go to "forward-slash"
     Then the response should be JSON:
     """
     {
