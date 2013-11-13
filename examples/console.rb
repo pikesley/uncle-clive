@@ -23,6 +23,9 @@ strings.each do |s|
   full_url = URI.join ssfaas, URI.encode(s)
 
   c = Curl::Easy.new("%s" % full_url)
+  c.headers = {
+      'Accept' => 'application/json'
+  }
   c.perform
   lines = JSON::parse(c.body_str)["data"]
 
