@@ -23,7 +23,7 @@ strings.each do |s|
 
   c         = Curl::Easy.new("%s" % full_url)
   c.headers = {
-      'Accept' => 'text/text'
+      'Accept' => 'text/plain'
   }
   c.perform
 
