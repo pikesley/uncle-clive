@@ -7,8 +7,14 @@ require 'sinatra/base'
 require 'haml'
 
 class Spectrum < Sinatra::Base
+  @@cs = UncleClive::FontGenerator.new
+
   get '/' do
-    haml :index
+    @@cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
+    haml :index, :locals => {
+        :title => '© 1982 Sinclair Research Ltd.',
+        :table => @@cs["Hello"]
+    }
   end
 
   get '/:text' do
@@ -19,16 +25,21 @@ class Spectrum < Sinatra::Base
         when 'application/json'
           cs.decorator = UncleClive::Decorators::JSONDecorator.new
           halt cs[params[:text]]
+
         when 'text/html'
-          cs.decorator = UncleClive::Decorators::JSONDecorator.new
-          halt cs[params[:text]]
+          cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
+          halt haml :index, :locals => {
+              :title => params[:text],
+              :table => cs[params[:text]]
+          }
+
         when 'text/text'
           cs.decorator = UncleClive::Decorators::TextDecorator.new
           cs.decorator.on = "[]"
           halt cs[params[:text]]
+
         else
           halt "Nope"
-#          halt cs.get_json(params[:text])
       end
     end
   end
