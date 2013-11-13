@@ -8,12 +8,13 @@ require 'haml'
 
 class Spectrum < Sinatra::Base
   @@cs = UncleClive::FontGenerator.new
+  @@title = '© 1982 Sinclair Research Ltd.'
 
   get '/' do
     @@cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
     haml :index, :locals => {
-        :title => '© 1982 Sinclair Research Ltd.',
-        :table => @@cs["Hello"]
+        :title => @@title,
+        :table => @@cs[@@title]
     }
   end
 
@@ -29,7 +30,7 @@ class Spectrum < Sinatra::Base
         when 'text/html'
           cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
           halt haml :index, :locals => {
-              :title => params[:text],
+              :title => @@title,
               :table => cs[params[:text]]
           }
 
