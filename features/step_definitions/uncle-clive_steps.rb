@@ -6,3 +6,6 @@ When(/^I request JSON$/) do
   add_headers({'Accept' => 'application/json'})
 end
 
+When(/^I request HTML$/) do
+  add_headers({'Accept' => 'application/html'})
+end
