@@ -2,7 +2,10 @@ module UncleClive
   module Decorators
     class HTMLTableDecorator
       def render font_generator, key
-        s = '<table>'
+        s = '<!-- %s -->' % [
+            key
+        ]
+        s << '<table>'
 
         font_generator.get(key).each do |line|
           s << '<tr>'
