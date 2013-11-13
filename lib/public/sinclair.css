@@ -1,7 +1,25 @@
-@import 'bootstrap.css';
-@import 'launch.css';
+table.sinclair {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-size: 0.01em;
+    width: 0%;
+    text-align: center;
+}
 
-table.sinclair, td.sinclair, tr.sinclair { padding: 0px; margin: 0px; border: 0px; font-size: 0.01em; }
-td { height: 3px; width: 3px; font-size: 0.01em; border: 0px; }
-td.on { background-color: #000; }
-td.off { background: transparent; }
+td.on, td.off {
+    height: 3px;
+    width: 3px;
+    font-size: 0.01em;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+td.on {
+    background-color: #000;
+}
+
+td.off {
+    background: transparent;
+}
