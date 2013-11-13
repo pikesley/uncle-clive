@@ -63,5 +63,13 @@ module UncleClive
 
       h.to_json
     end
+
+    def get_xml s
+      h = {}
+      h[:id]
+      h[:data] = self.get(s)
+
+      h.to_xml
+    end
   end
 end
