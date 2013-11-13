@@ -3,5 +3,5 @@ Before '@json' do
 end
 
 Before '@html' do
-  add_headers({'Accept' => 'application/html'})
+  add_headers({'Accept' => 'text/html'})
 end
