@@ -2,7 +2,6 @@
 Feature: get JSON
 
   Scenario: Get JSON for single character
-    Given I request JSON
     When I go to "/a"
     Then the response should be JSON:
     """
@@ -22,7 +21,6 @@ Feature: get JSON
   """
 
   Scenario: Get JSON for longer string
-    Given I request JSON
     When I go to "/1982"
     Then the response should be JSON:
     """
@@ -42,7 +40,6 @@ Feature: get JSON
     """
 
   Scenario: Handle embedded spaces correctly
-    Given I request JSON
     When I go to "/a b c"
     Then the response should be JSON:
     """
@@ -63,7 +60,6 @@ Feature: get JSON
 
   @wip
   Scenario: Do the right thing with a "/"
-    Given I request JSON
     When I go to "forward-slash"
     Then the response should be JSON:
     """
