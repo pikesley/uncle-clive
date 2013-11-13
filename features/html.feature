@@ -7,7 +7,6 @@ Feature: view HTML pages
     And I should see "Try adding some text onto the end of the URL"
 
   Scenario: Get a single character
-    Given I request HTML
     When I go to "/a"
     Then the response should be JSON:
     """
