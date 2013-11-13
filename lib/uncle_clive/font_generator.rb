@@ -1,5 +1,4 @@
 require 'json'
-require 'pry'
 
 module UncleClive
   class FontGenerator
@@ -23,7 +22,7 @@ module UncleClive
     end
 
     def fetch key
-      @chars[key]
+      self[key]
     end
 
     def [] key
