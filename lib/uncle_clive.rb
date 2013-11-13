@@ -13,8 +13,10 @@ class Spectrum < Sinatra::Base
       case type.to_s
         when 'application/json'
           halt cs.get_json(params[:text])
+        when 'application/html'
+          halt cs.get_json(params[:text])
         else
-          halt "Unknown content-type"
+          halt "Unknown typee"
       end
     end
   end
