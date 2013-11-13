@@ -1,11 +1,8 @@
-Feature: view pages
-
-  Scenario: Get the home page
-    Given I am on "the home page"
-    Then I should see "Nothing to see here"
-    And I should see "Try adding some text onto the end of the URL"
+@json
+Feature: get JSON
 
   Scenario: Get JSON for single character
+    Given I request JSON
     When I go to "/a"
     Then the response should be JSON:
     """
@@ -25,6 +22,7 @@ Feature: view pages
   """
 
   Scenario: Get JSON for longer string
+    Given I request JSON
     When I go to "/1982"
     Then the response should be JSON:
     """
@@ -44,6 +42,7 @@ Feature: view pages
     """
 
   Scenario: Handle embedded spaces correctly
+    Given I request JSON
     When I go to "/a b c"
     Then the response should be JSON:
     """
@@ -64,7 +63,8 @@ Feature: view pages
 
   @wip
   Scenario: Do the right thing with a "/"
-    When I go to "/forward-slash"
+    Given I request JSON
+    When I go to "forward-slash"
     Then the response should be JSON:
     """
     {
