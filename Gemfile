@@ -12,7 +12,7 @@ gem 'json'
 gem 'curb'
 gem 'haml'
 #gem 'github-markup'
-gem 'kramdown'
+gem 'maruku'
 
 group :test do
   gem 'capybara-webkit'

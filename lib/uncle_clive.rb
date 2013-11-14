@@ -6,7 +6,7 @@ require_relative "uncle_clive/formatters/html_table_formatter"
 require 'sinatra/base'
 require 'haml'
 #require 'github/markup'
-require 'kramdown'
+require 'maruku'
 
 class Spectrum < Sinatra::Base
   get '/' do
