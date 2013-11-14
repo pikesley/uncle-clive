@@ -5,19 +5,28 @@ require_relative "uncle_clive/formatters/json_formatter"
 require_relative "uncle_clive/formatters/html_table_formatter"
 require 'sinatra/base'
 require 'haml'
-#require 'github/markup'
 require 'maruku'
+require 'rack-google-analytics'
 
 class Spectrum < Sinatra::Base
+  use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
+
   get '/' do
     haml :readme, :locals => {
-#        :text  => GitHub::Markup.render('README.md', File.read('README.md')),
-        :text => markdown(File.read('README.md')),
+        :text  => markdown(File.read('README.md')),
         :title => '© 1982 Sinclair Research Ltd.'
     }
   end
 
   get '/:text' do
+    respond params[:data]
+  end
+
+  post '/:text' do
+    respond params[:text]
+  end
+
+  def respond text
     cs = UncleClive::FontGenerator.new
 
     request.accept.each do |type|
