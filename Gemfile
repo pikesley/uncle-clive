@@ -11,7 +11,6 @@ gem 'travis'
 gem 'json'
 gem 'curb'
 gem 'haml'
-#gem 'github-markup'
 gem 'maruku'
 
 group :test do
