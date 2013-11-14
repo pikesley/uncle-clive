@@ -6,7 +6,7 @@
 
 ##Sinclair Spectrum Font as a Service
 
-###Because my nostalgia for the Spectrum knows no bounds
+_v0.1.0_
 
 ##Introduction
 
