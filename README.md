@@ -1,14 +1,14 @@
+[![Build Status](https://api.travis-ci.org/pikesley/uncle-clive.png)](https://travis-ci.org/pikesley/uncle-clive)
+[![Code Climate](https://codeclimate.com/github/pikesley/uncle-clive.png)](https://codeclimate.com/github/pikesley/uncle-clive)
+[![Dependency Status](https://gemnasium.com/pikesley/uncle-clive.png)](https://gemnasium.com/pikesley/uncle-clive)
+
 #Uncle Clive
 
 ##Sinclair Spectrum Font as a Service
 
 ###Because my nostalgia for the Spectrum knows no bounds
 
-[![Build Status](https://api.travis-ci.org/pikesley/uncle-clive.png)](https://travis-ci.org/pikesley/uncle-clive)
-[![Code Climate](https://codeclimate.com/github/pikesley/uncle-clive.png)](https://codeclimate.com/github/pikesley/uncle-clive)
-[![Dependency Status](https://gemnasium.com/pikesley/uncle-clive.png)](https://gemnasium.com/pikesley/uncle-clive)
-
-#Introduction
+##Introduction
 
 You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm _almost 100% certain does not exist_ - rendering text in the 1982 Sinclair Spectrum character set.
 
@@ -16,11 +16,11 @@ It's mostly an exercise in me learning how to do REST and conneg (and possibly s
 
 It's running at [http://uncleclive.herokuapp.com/](http://uncleclive.herokuapp.com/)
 
-##Content negotiation
+###Content negotiation
 
 Uncle-Clive will respond to the following _Accept_ values with appropriate content:
 
-###application/json
+####application/json
 
 Content will be returned as a JSON object thus:
 
@@ -38,7 +38,7 @@ Content will be returned as a JSON object thus:
       ]
     }
 
-###text/plain
+####text/plain
 
 Content will be returned as plain text formatted thus:
 
@@ -49,13 +49,13 @@ Content will be returned as plain text formatted thus:
     .        []                  []    []        []    []
     .    [][][][][]      [][][][]        [][][][]      [][][][][][]
 
-See `examples/console.rb` for an example
+See `examples/console.rb` for an example.
 
-###text/html
+####text/html
 
 Content will be returned as an HTML page with a Twitter Bootstrap hero unit containing the data rendered as a table.
 
-##API
+###API
 
 ####/:text
 
