@@ -5,12 +5,14 @@ require_relative "uncle_clive/formatters/json_formatter"
 require_relative "uncle_clive/formatters/html_table_formatter"
 require 'sinatra/base'
 require 'haml'
-require 'github/markup'
+#require 'github/markup'
+require 'kramdown'
 
 class Spectrum < Sinatra::Base
   get '/' do
     haml :readme, :locals => {
-        :text  => GitHub::Markup.render('README.md', File.read('README.md')),
+#        :text  => GitHub::Markup.render('README.md', File.read('README.md')),
+        :text => markdown(File.read('README.md')),
         :title => '© 1982 Sinclair Research Ltd.'
     }
   end

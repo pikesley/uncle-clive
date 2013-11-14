@@ -11,7 +11,8 @@ gem 'travis'
 gem 'json'
 gem 'curb'
 gem 'haml'
-gem 'github-markup'
+#gem 'github-markup'
+gem 'kramdown'
 
 group :test do
   gem 'capybara-webkit'
