@@ -4,7 +4,7 @@ module UncleClive
   describe FontGenerator do
     before :each do
       @cs           = FontGenerator.new
-      @cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
+      @cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
     end
 
     it "should look table-ish" do

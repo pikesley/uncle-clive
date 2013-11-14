@@ -1,8 +1,8 @@
 require_relative "uncle_clive/version"
 require_relative "uncle_clive/font_generator"
-require_relative "uncle_clive/decorators/text_decorator"
-require_relative "uncle_clive/decorators/json_decorator"
-require_relative "uncle_clive/decorators/html_table_decorator"
+require_relative "uncle_clive/formatters/text_formatter"
+require_relative "uncle_clive/formatters/json_formatter"
+require_relative "uncle_clive/formatters/html_table_formatter"
 require 'sinatra/base'
 require 'haml'
 
@@ -11,7 +11,7 @@ class Spectrum < Sinatra::Base
   @@title = '© 1982 Sinclair Research Ltd.'
 
   get '/' do
-    @@cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
+    @@cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
     haml :index, :locals => {
         :title => @@title,
         :table => @@cs[@@title]
@@ -24,19 +24,19 @@ class Spectrum < Sinatra::Base
     request.accept.each do |type|
       case type.to_s
         when 'application/json'
-          cs.decorator = UncleClive::Decorators::JSONDecorator.new
+          cs.formatter = UncleClive::Formatters::JSONFormatter.new
           halt cs[params[:text]]
 
         when 'text/html'
-          cs.decorator = UncleClive::Decorators::HTMLTableDecorator.new
+          cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
           halt haml :index, :locals => {
               :title => @@title,
               :table => cs[params[:text]]
           }
 
         when 'text/plain'
-          cs.decorator = UncleClive::Decorators::TextDecorator.new
-          cs.decorator.on = "[]"
+          cs.formatter = UncleClive::Formatters::TextFormatter.new
+          cs.formatter.on = "[]"
           halt cs[params[:text]]
 
         else

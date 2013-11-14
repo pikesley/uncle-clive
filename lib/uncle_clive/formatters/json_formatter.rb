@@ -1,6 +1,6 @@
 module UncleClive
-  module Decorators
-    class JSONDecorator
+  module Formatters
+    class JSONFormatter
       def render font_generator, key
         {
             :id   => key.to_s,

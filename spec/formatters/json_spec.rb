@@ -4,7 +4,7 @@ module UncleClive
   describe FontGenerator do
     before :each do
       @cs = FontGenerator.new
-      @cs.decorator = UncleClive::Decorators::JSONDecorator.new
+      @cs.formatter = UncleClive::Formatters::JSONFormatter.new
     end
 
     it "should return JSON" do

@@ -1,6 +1,6 @@
 module UncleClive
-  module Decorators
-    class HTMLTableDecorator
+  module Formatters
+    class HTMLTableFormatter
       def render font_generator, key
         s = '<!-- %s -->' % [
             key
