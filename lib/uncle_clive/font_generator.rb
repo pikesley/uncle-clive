@@ -2,7 +2,7 @@ require 'json'
 
 module UncleClive
   class FontGenerator
-    attr_accessor :decorator, :on_char, :off_char
+    attr_accessor :formatter, :on_char, :off_char
 
     def initialize char_set_file = "conf/character_set.txt"
       @chars    = {}
@@ -28,8 +28,8 @@ module UncleClive
     def [] key
       result = self.get key.to_s
 
-      if @decorator
-        @decorator.render self, key
+      if @formatter
+        @formatter.render self, key
       else
         result
       end

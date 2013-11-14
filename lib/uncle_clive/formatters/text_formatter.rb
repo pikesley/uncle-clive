@@ -1,8 +1,6 @@
-require 'pry'
-
 module UncleClive
-  module Decorators
-    class TextDecorator
+  module Formatters
+    class TextFormatter
       attr_accessor :on, :off
 
       def initialize args = {}

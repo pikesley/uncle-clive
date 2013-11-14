@@ -4,7 +4,7 @@ module UncleClive
   describe FontGenerator do
     before :each do
       @cs = FontGenerator.new
-      @cs.decorator = UncleClive::Decorators::TextDecorator.new
+      @cs.formatter = UncleClive::Formatters::TextFormatter.new
     end
 
     it "should give us a correct character" do
@@ -56,7 +56,7 @@ module UncleClive
     end
 
     it "should return characters other than 0's and 1's" do
-      @cs.decorator = UncleClive::Decorators::TextDecorator.new({:on => 'X', :off => '.'})
+      @cs.formatter = UncleClive::Formatters::TextFormatter.new({:on => 'X', :off => '.'})
       @cs["Sam"].should ==
           """........................
 ..XXXX..................
