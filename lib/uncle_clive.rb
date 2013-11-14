@@ -6,12 +6,15 @@ require_relative "uncle_clive/formatters/html_table_formatter"
 require 'sinatra/base'
 require 'haml'
 require 'maruku'
+require 'rack-google-analytics'
 
 class Spectrum < Sinatra::Base
+  use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
+
   get '/' do
     haml :readme, :locals => {
-:text  => markdown(File.read('README.md')),
-:title => '© 1982 Sinclair Research Ltd.'
+        :text  => markdown(File.read('README.md')),
+        :title => '© 1982 Sinclair Research Ltd.'
     }
   end
 

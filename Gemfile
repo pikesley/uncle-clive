@@ -12,6 +12,8 @@ gem 'json'
 gem 'curb'
 gem 'haml'
 gem 'maruku'
+gem 'activesupport'
+gem 'rack-google-analytics'
 
 group :test do
   gem 'capybara-webkit'
