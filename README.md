@@ -14,8 +14,6 @@ You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Cli
 
 It's mostly an exercise in me learning how to do REST and conneg (and possibly semver).
 
-It's running at [http://uncleclive.herokuapp.com/](http://uncleclive.herokuapp.com/)
-
 ###Content negotiation
 
 Uncle-Clive will respond to the following _Accept_ values with appropriate content:
