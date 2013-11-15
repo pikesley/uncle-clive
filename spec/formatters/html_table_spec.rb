@@ -27,6 +27,10 @@ module UncleClive
       it "should be run-length encoded by default" do
         @cs['b'].should match /<tr class="sinclair"><td class="off" colspan="8"> <\/td><\/tr><tr class="sinclair"><td class="off" colspan="2"> <\/td><td class="on"> <\/td><td class="off" colspan="5"> <\/td><\/tr>/
       end
+
+      it "should have a row of single cells to make the spacing sane" do
+        @cs['b'].should match /<tr class="sinclair"><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><\/tr>/
+      end
     end
   end
 end

@@ -16,7 +16,19 @@ module UncleClive
         ]
         s << '<table class="sinclair">'
 
-        font_generator.get(key).each do |line|
+        lines = font_generator.get(key)
+
+        if @rle
+          a = []
+          (key.length * 8).times do |bit|
+            a << {
+                0 => 1
+            }
+          end
+          lines.unshift a
+        end
+
+        lines.each do |line|
           s << '<tr class="sinclair">'
 
           if not @rle
