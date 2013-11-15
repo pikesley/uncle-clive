@@ -53,7 +53,8 @@ class Spectrum < Sinatra::Base
 
         when 'image/png'
           cs.formatter = UncleClive::Formatters::PNGFormatter.new
-          halt cs[params[:text]]
+          content_type 'image/png'
+          send_file cs[params[:text]], :type => :png
 
         else
           halt "Nothing to see here"

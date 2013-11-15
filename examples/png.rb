@@ -11,9 +11,7 @@ outfile = "/tmp/sinclair.png"
 s        = 'R Tape loading error'
 
 if ARGV[0]
-  s = [
-      ARGV[0]
-  ]
+  s = ARGV[0]
 end
 
 full_url = URI.join ssfaas, URI.encode(s)
