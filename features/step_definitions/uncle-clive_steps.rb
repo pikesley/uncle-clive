@@ -19,3 +19,7 @@ end
 Then(/^the response should be a PNG$/) do
   true
 end
+
+Then(/^"(.*?)" should not be "(.*?)"$/) do |tag, text|
+  page.should_not have_xpath("//#{tag}", :text => "#{text}")
+end
