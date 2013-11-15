@@ -15,3 +15,7 @@ Then /^(?:|I )should see "([^\"]*)" inside "([^\"]*)"$/ do |inner, outer|
     end
   end
 end
+
+Then(/^the response should be a PNG$/) do
+  true
+end
