@@ -59,6 +59,10 @@ Content will be returned as an HTML page with a Twitter Bootstrap hero unit cont
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
 
+###Notes
+
+See also the `examples/png.rb` script for an example of generating PNG images from the JSON content.
+
 ###Roadmap
 
 In the future, Uncle-Clive may:
