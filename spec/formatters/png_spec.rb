@@ -11,7 +11,9 @@ module UncleClive
       it "should return a PNG" do
         png = @cs['ODI']
         png.class.should == ChunkyPNG::Canvas
-#        png.width.should == 192
+
+        png.width.should == 192
+        png.height.should == 64
       end
     end
   end

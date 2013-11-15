@@ -7,11 +7,12 @@ module UncleClive
 
       def initialize args = {}
         @colour = args[:colour] ||= '#000000'
-        @size   = args[:size].to_i ||= 8
+        @size   = args[:size] ||= 8
         @image
       end
 
       def render font_generator, key
+        puts @size
         lines = font_generator.get(key)
         @image = ChunkyPNG::Canvas.new((lines[0].length) * @size, lines.length * @size)
         x     = 0

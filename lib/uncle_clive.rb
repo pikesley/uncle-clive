@@ -53,8 +53,7 @@ class Spectrum < Sinatra::Base
 
         when 'image/png'
           cs.formatter = UncleClive::Formatters::PNGFormatter.new
-   #       content_type 'image/png'
-          cs[params[:text]].save("%s.png" % [ params[:text]] )
+          content_type 'image/png'
           send_file cs[params[:text]], :type => :png
 
         else
