@@ -130,7 +130,6 @@ DEPENDENCIES
   cucumber-sinatra
   curb
   haml
-  json
   maruku
   rack-google-analytics
   rack-test
