@@ -11,3 +11,4 @@ Feature: view HTML pages
   Scenario: Get a single character
     When I go to "/a"
     Then I should see "table" inside ".hero-unit"
+    And "title" should not be "Nothing to see here"
