@@ -3,6 +3,8 @@ require_relative "uncle_clive/font_generator"
 require_relative "uncle_clive/formatters/text_formatter"
 require_relative "uncle_clive/formatters/json_formatter"
 require_relative "uncle_clive/formatters/html_table_formatter"
+require_relative "uncle_clive/formatters/png_formatter"
+
 require 'sinatra/base'
 require 'haml'
 require 'maruku'
@@ -46,6 +48,10 @@ class Spectrum < Sinatra::Base
         when 'text/plain'
           cs.formatter    = UncleClive::Formatters::TextFormatter.new
           cs.formatter.on = "[]"
+          halt cs[params[:text]]
+
+        when 'image/png'
+          cs.formatter = UncleClive::Formatters::PNGFormatter.new
           halt cs[params[:text]]
 
         else
