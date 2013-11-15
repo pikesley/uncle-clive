@@ -6,6 +6,7 @@ Feature: view HTML pages
     Then I should see "Uncle Clive"
     And I should see "Sinclair Spectrum Font as a Service"
     And I should see "Content negotiation"
+    And I should not see "It's running at"
 
   Scenario: Get a single character
     When I go to "/a"
