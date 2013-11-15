@@ -30,7 +30,7 @@ module UncleClive
           y += @size
         end
 
-        @image
+        @image #.to_image.to_datastream
       end
 
       def save path = "/tmp/png.png"
