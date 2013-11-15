@@ -14,6 +14,7 @@ gem 'haml'
 gem 'maruku'
 gem 'activesupport'
 gem 'rack-google-analytics'
+gem 'chunky_png'
 
 group :test do
   gem 'capybara-webkit'
