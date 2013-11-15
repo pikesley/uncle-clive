@@ -67,7 +67,6 @@ See also the `examples/png.rb` script for an example of generating PNG images fr
 
 In the future, Uncle-Clive may:
 
-* allow setting of colour and cell-size for the _application/html_ rendering
 * allow modifications of the character set on-the-fly to make the _application/json_ rendering useful for [Gitfiti](https://github.com/gelstudios/gitfiti) (which is kind of why I started doing this in the first place)
 
 ###History
