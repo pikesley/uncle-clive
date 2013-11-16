@@ -23,4 +23,6 @@ group :test do
   gem 'rack-test'
   gem 'guard'
   gem 'guard-rspec', require: false
+  gem 'guard-cucumber'
+  gem 'terminal-notifier-guard'
 end
