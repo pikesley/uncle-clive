@@ -29,7 +29,7 @@ module UncleClive
       end
 
       it "should have a row of single cells to make the spacing sane" do
-        @cs['b'].should match /<tr class="sinclair"><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><\/tr>/
+        @cs['b'].should match /<tr class="sinclair"><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><td class="off"> <\/td><\/tr><\/table>/
       end
     end
   end

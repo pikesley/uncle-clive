@@ -25,7 +25,7 @@ module UncleClive
                 0 => 1
             }
           end
-          lines.unshift a
+          lines << a
         end
 
         lines.each do |line|
