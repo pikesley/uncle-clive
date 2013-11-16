@@ -12,7 +12,6 @@ module UncleClive
       end
 
       def render font_generator, key
-        puts @size
         lines = font_generator.get(key)
         @image = ChunkyPNG::Canvas.new((lines[0].length) * @size, lines.length * @size)
         x     = 0
