@@ -25,4 +25,5 @@ group :test do
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
   gem 'terminal-notifier-guard'
+  gem 'coveralls', require: false
 end
