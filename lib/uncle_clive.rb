@@ -15,10 +15,13 @@ class Spectrum < Sinatra::Base
   use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
 
   get '/' do
-    haml :readme, :locals => {
-        :text  => markdown(File.read('README.md')),
+    haml :layout, :locals => {
         :title => '© 1982 Sinclair Research Ltd.'
-    }
+    } do
+      haml :readme, :locals => {
+          :text => markdown(File.read('README.md'))
+      }
+    end
   end
 
   get '/:text' do
@@ -41,10 +44,13 @@ class Spectrum < Sinatra::Base
 
         when 'text/html'
           cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
-          halt haml :tabliser, :locals => {
-              :title => params[:text],
-              :table => cs[params[:text]]
-          }
+          halt haml :layout, :locals => {
+              :title => params[:text]
+          } do
+            haml :tabliser, :locals => {
+                :table => cs[params[:text]]
+            }
+          end
 
         when 'text/plain'
           cs.formatter    = UncleClive::Formatters::TextFormatter.new
