@@ -48,7 +48,7 @@ Content will be returned as plain text formatted thus:
     .        []                  []    []        []    []
     .    [][][][][]      [][][][]        [][][][]      [][][][][][]
 
-See `examples/console.rb` for an example.
+See the [`examples/console.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/console.rb) script for an example.
 
 ####text/html
 
@@ -62,7 +62,7 @@ Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum 
 
 ###Notes
 
-See also the `examples/png.rb` script for an example of generating PNG images from the JSON content.
+See also the [`examples/png.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/png.rb) script for an example of using the excellent [chunky_png](https://github.com/wvanbergen/chunky_png) library to generate PNG images from the JSON content.
 
 ###Roadmap
 
