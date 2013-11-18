@@ -16,6 +16,7 @@ class Spectrum < Sinatra::Base
 
   get '/' do
     haml :readme, :locals => {
+    #    :bootstrap_theme => 'http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css',
         :title => '© 1982 Sinclair Research Ltd.',
         :text  => markdown(File.read('README.md'))
     }
