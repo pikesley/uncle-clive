@@ -8,7 +8,7 @@ require_relative 'uncle_clive/decorators/run_length_encoder'
 
 require 'sinatra/base'
 require 'haml'
-require 'maruku'
+require 'kramdown'
 require 'rack-google-analytics'
 
 class Spectrum < Sinatra::Base
