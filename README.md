@@ -9,7 +9,7 @@
 
 _v0.0.3_
 
-##Start tape then press any key
+##Introduction
 
 You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm _almost 100% certain does not exist_ - rendering text in the 1982 Sinclair Spectrum character set.
 
@@ -41,12 +41,12 @@ Content will be returned as a JSON object thus:
 
 Content will be returned as plain text formatted thus:
 
-.      [][]          [][][][]        [][][][]        [][][][]
-.    []  []        []        []    []        []    []        []
-.        []        []        []      [][][][]                []
-.        []          [][][][][]    []        []      [][][][]
-.        []                  []    []        []    []
-.    [][][][][]      [][][][]        [][][][]      [][][][][][]
+    .      [][]          [][][][]        [][][][]        [][][][]
+    .    []  []        []        []    []        []    []        []
+    .        []        []        []      [][][][]                []
+    .        []          [][][][][]    []        []      [][][][]
+    .        []                  []    []        []    []
+    .    [][][][][]      [][][][]        [][][][]      [][][][][][]
 
 See the [`examples/console.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/console.rb) script for an example.
 
