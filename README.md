@@ -9,7 +9,7 @@
 
 _v0.0.3_
 
-##Introduction
+##Start tape then press any key
 
 You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm _almost 100% certain does not exist_ - rendering text in the 1982 Sinclair Spectrum character set.
 
