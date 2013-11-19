@@ -41,14 +41,12 @@ Content will be returned as a JSON object thus:
 
 Content will be returned as plain text formatted thus:
 
-    .    [][][][]
-    .  []        []                        [][]          [][][][]        [][][][]        [][][][]
-    .[]    [][]    []                    []  []        []        []    []        []    []        []
-    .[]  []        []                        []        []        []      [][][][]                []
-    .[]  []        []                        []          [][][][][]    []        []      [][][][]
-    .[]    [][]    []                        []                  []    []        []    []
-    .  []        []                      [][][][][]      [][][][]        [][][][]      [][][][][][]
-    .    [][][][]
+.      [][]          [][][][]        [][][][]        [][][][]
+.    []  []        []        []    []        []    []        []
+.        []        []        []      [][][][]                []
+.        []          [][][][][]    []        []      [][][][]
+.        []                  []    []        []    []
+.    [][][][][]      [][][][]        [][][][]      [][][][][][]
 
 See the [`examples/console.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/console.rb) script for an example.
 
