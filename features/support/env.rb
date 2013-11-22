@@ -8,6 +8,9 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
 
+require 'coveralls'
+Coveralls.wear!
+
 Capybara.app = Spectrum
 
 class SpectrumWorld
