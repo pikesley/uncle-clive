@@ -52,7 +52,7 @@ See the [`examples/console.rb`](https://github.com/pikesley/uncle-clive/blob/mas
 
 ####text/html
 
-Content will be returned as an HTML page with a Twitter Bootstrap hero unit containing the data rendered as a table.
+Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table.
 
 ###API
 
