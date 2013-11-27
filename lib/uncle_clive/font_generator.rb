@@ -2,19 +2,39 @@ require 'json'
 
 module UncleClive
   class FontGenerator
-    attr_accessor :formatter, :on_char, :off_char
+    attr_accessor :formatter, :on_char, :off_char, :height
 
     def initialize char_set_file = "conf/character_set.txt"
+      @char_set_file = char_set_file
       @chars    = {}
       @on_char  = "1"
       @off_char = "0"
-      File.open(char_set_file).readlines.each do |line|
+      @height   = 8
+      get_chars
+    end
+
+    def get_chars
+      File.open(@char_set_file).readlines.each do |line|
         pieces = line.match(/^(.)  *(.*)/)
         key    = pieces[1]
         values = pieces[2].split(" ").map { |i| i.to_i }
 
+        if @height == 7
+          if values[-1] == 0
+            values.pop
+          elsif values[0] == 0
+            values.shift
+          else
+            true
+          end
+        end
         @chars[key] = values
       end
+    end
+
+    def height= height
+      @height = height
+      get_chars
     end
 
     def raw_data key

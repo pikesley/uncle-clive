@@ -1,4 +1,4 @@
-Before '@json' do
+Before('@json, @gitfiti') do
   add_headers(
       {
           'Accept' => 'application/json'
