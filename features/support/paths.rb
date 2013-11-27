@@ -19,11 +19,18 @@ module NavigationHelpers
       when /a b c/
         '/a%20b%20c'
 
+      when /a\/7/
+        '/a/7'
+
       when /a/
         '/a'
 
+      when /1982\/7/
+        '/1982/7'
+
       when /1982/
         '/1982'
+
       # Add more mappings here.
       # Here is an example that pulls values out of the Regexp:
       #
