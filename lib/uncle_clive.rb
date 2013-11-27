@@ -30,6 +30,22 @@ class Spectrum < Sinatra::Base
     respond params[:text]
   end
 
+  get '/:text/:height' do
+    cs = UncleClive::FontGenerator.new
+
+    request.accept.each do |type|
+      case type.to_s
+
+        when 'application/json'
+          cs.formatter = UncleClive::Formatters::JSONFormatter.new
+          cs.height    = 7
+          halt cs[params[:text]]
+        else
+          halt "We only do JSON here"
+      end
+    end
+  end
+
   def respond text
     cs = UncleClive::FontGenerator.new
 
