@@ -31,14 +31,16 @@ class Spectrum < Sinatra::Base
   end
 
   get '/:text/gitfiti' do
-    cs           = UncleClive::FontGenerator.new
-    cs.formatter = UncleClive::Formatters::JSONFormatter.new
-    cs.gitfiti   = true
-    halt cs[params[:text]]
+    respond params[:text], true
   end
 
-  def respond text
+  post '/:text/gitfiti' do
+    respond params[:text], true
+  end
+
+  def respond text, gitfiti = false
     cs = UncleClive::FontGenerator.new
+    cs.gitfiti = gitfiti
 
     request.accept.each do |type|
       case type.to_s
