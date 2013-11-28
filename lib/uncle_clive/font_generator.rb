@@ -25,7 +25,7 @@ module UncleClive
           elsif values[0] == 0
             values.shift
           else
-            true
+            values = (values[0..3] << values[5..7]).flatten
           end
         end
         @chars[key] = values
