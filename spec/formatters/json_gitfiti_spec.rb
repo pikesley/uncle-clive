@@ -6,7 +6,7 @@ module UncleClive
       before :each do
         @cs           = FontGenerator.new
         @cs.formatter = UncleClive::Formatters::JSONFormatter.new
-        @cs.height    = 7
+        @cs.gitfiti    = true
       end
 
       it "should return JSON" do
