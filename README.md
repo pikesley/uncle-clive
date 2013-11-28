@@ -68,12 +68,6 @@ Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum 
 
 See also the [`examples/png.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/png.rb) script for an example of using the excellent [chunky_png](https://github.com/wvanbergen/chunky_png) library to generate PNG images from the JSON content.
 
-###Roadmap
-
-In the future, Uncle-Clive may:
-
-* allow modifications of the character set on-the-fly to make the _application/json_ rendering useful for [Gitfiti](https://github.com/gelstudios/gitfiti) (which is kind of why I started doing this in the first place)
-
 ###History
 
 This is at least the third time I've implemented this or something like it:
