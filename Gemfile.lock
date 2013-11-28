@@ -200,4 +200,4 @@ DEPENDENCIES
   sinatra
   terminal-notifier-guard
   thin
-  travis (~> 1.6.2)
+  travis (~> 1.6)
