@@ -30,7 +30,7 @@ class Spectrum < Sinatra::Base
     respond params[:text]
   end
 
-  get '/:text/:height' do
+  get '/:text/gitfiti' do
     cs = UncleClive::FontGenerator.new
 
     request.accept.each do |type|
@@ -38,7 +38,7 @@ class Spectrum < Sinatra::Base
 
         when 'application/json'
           cs.formatter = UncleClive::Formatters::JSONFormatter.new
-          cs.height    = 7
+          cs.gitfiti    = true
           halt cs[params[:text]]
         else
           halt "We only do JSON here"

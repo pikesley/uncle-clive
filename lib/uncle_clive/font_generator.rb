@@ -2,14 +2,14 @@ require 'json'
 
 module UncleClive
   class FontGenerator
-    attr_accessor :formatter, :on_char, :off_char, :height
+    attr_accessor :formatter, :on_char, :off_char, :gitfiti
 
     def initialize char_set_file = "conf/character_set.txt"
       @char_set_file = char_set_file
       @chars    = {}
       @on_char  = "1"
       @off_char = "0"
-      @height   = 8
+      @gitfiti   = false
       get_chars
     end
 
@@ -19,7 +19,7 @@ module UncleClive
         key    = pieces[1]
         values = pieces[2].split(" ").map { |i| i.to_i }
 
-        if @height == 7
+        if @gitfiti
           if values[-1] == 0
             values.pop
           elsif values[0] == 0
@@ -32,8 +32,8 @@ module UncleClive
       end
     end
 
-    def height= height
-      @height = height
+    def gitfiti= bool
+      @gitfiti = bool
       get_chars
     end
 

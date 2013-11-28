@@ -2,7 +2,7 @@
 Feature: get height-adjusted JSON
 
   Scenario: Get height-adjusted JSON for a single character
-    When I go to "/a/7"
+    When I go to "/a/gitfiti"
     Then the response should be JSON:
     """
     {
@@ -20,7 +20,7 @@ Feature: get height-adjusted JSON
     """
 
   Scenario: Get height-adjusted JSON for longer string
-    When I go to "/1982/7"
+    When I go to "/1982/gitfiti"
     Then the response should be JSON:
     """
     {
