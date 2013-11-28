@@ -7,7 +7,7 @@
 
 ##Sinclair Spectrum Font as a Service
 
-_v0.0.3_
+_v0.1.0_
 
 ##Introduction
 
@@ -60,15 +60,13 @@ Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron cont
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
 
+####/:text/gitfiti
+
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but compressed to fit into 7 rows, the JSON form of which is suitable for use in [Gitfiti](https://github.com/gelstudios/gitfiti)
+
 ###Notes
 
 See also the [`examples/png.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/png.rb) script for an example of using the excellent [chunky_png](https://github.com/wvanbergen/chunky_png) library to generate PNG images from the JSON content.
-
-###Roadmap
-
-In the future, Uncle-Clive may:
-
-* allow modifications of the character set on-the-fly to make the _application/json_ rendering useful for [Gitfiti](https://github.com/gelstudios/gitfiti) (which is kind of why I started doing this in the first place)
 
 ###History
 
