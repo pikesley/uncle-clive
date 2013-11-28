@@ -7,7 +7,7 @@
 
 ##Sinclair Spectrum Font as a Service
 
-_v0.0.3_
+_v0.1.0_
 
 ##Introduction
 
@@ -59,6 +59,10 @@ Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron cont
 ####/:text
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
+
+####/:text/gitfiti
+
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but compressed to fit into 7 rows, the JSON form of which is suitable for use in [Gitfiti](https://github.com/gelstudios/gitfiti)
 
 ###Notes
 
