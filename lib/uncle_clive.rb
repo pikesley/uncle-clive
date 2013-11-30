@@ -60,8 +60,9 @@ class Spectrum < Sinatra::Base
         when 'text/html'
           cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
           halt haml :tabliser, :locals => {
-              :title => params[:text],
-              :table => cs[params[:text]]
+              :bootstrap_theme => '../lavish-bootstrap.css',
+              :title           => params[:text],
+              :table           => cs[params[:text]]
           }
 
         when 'text/plain'
