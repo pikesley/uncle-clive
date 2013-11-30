@@ -28,6 +28,9 @@ module NavigationHelpers
       when /1982\/gitfiti/
         '/1982/gitfiti'
 
+      when /1982\/pokrovsky/
+        '/1982/pokrovsky'
+
       when /1982/
         '/1982'
 

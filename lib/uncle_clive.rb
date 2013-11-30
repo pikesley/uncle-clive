@@ -30,6 +30,14 @@ class Spectrum < Sinatra::Base
     respond params[:text]
   end
 
+  get '/:text/pokrovsky' do
+    respond params[:text], true
+  end
+
+  post '/:text/pokrovsky' do
+    respond params[:text], true
+  end
+
   get '/:text/gitfiti' do
     respond params[:text], true
   end
