@@ -16,9 +16,9 @@ class Spectrum < Sinatra::Base
 
   get '/' do
     haml :readme, :locals => {
-        #    :bootstrap_theme => 'http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css',
-        :title => '© 1982 Sinclair Research Ltd.',
-        :text  => markdown(File.read('README.md'))
+        :bootstrap_theme => '../lavish-bootstrap.css',
+        :title           => '© 1982 Sinclair Research Ltd.',
+        :text            => markdown(File.read('README.md'))
     }
   end
 
@@ -47,7 +47,7 @@ class Spectrum < Sinatra::Base
   end
 
   def respond text, gitfiti = false
-    cs = UncleClive::FontGenerator.new
+    cs         = UncleClive::FontGenerator.new
     cs.gitfiti = gitfiti
 
     request.accept.each do |type|
