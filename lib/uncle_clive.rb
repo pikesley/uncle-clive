@@ -29,8 +29,7 @@ class Spectrum < Sinatra::Base
   get '/' do
     haml :readme, :locals => @@locals.merge(
         {
-            :title => '© 1982 Sinclair Research Ltd.',
-            :text  => markdown(File.read('README.md'))
+            :title => '© 1982 Sinclair Research Ltd.'
         }
     )
   end
