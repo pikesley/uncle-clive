@@ -18,7 +18,12 @@ class Spectrum < Sinatra::Base
     haml :readme, :locals => {
         :bootstrap_theme => '../lavish-bootstrap.css',
         :title           => '© 1982 Sinclair Research Ltd.',
-        :text            => markdown(File.read('README.md'))
+        :text            => markdown(File.read('README.md')),
+        :github          => {
+            :user    => 'pikesley',
+            :project => 'uncle-clive',
+            :ribbon  => 'right_darkblue_121621'
+        }
     }
   end
 
@@ -62,7 +67,12 @@ class Spectrum < Sinatra::Base
           halt haml :tabliser, :locals => {
               :bootstrap_theme => '../lavish-bootstrap.css',
               :title           => params[:text],
-              :table           => cs[params[:text]]
+              :table           => cs[params[:text]],
+              :github          => {
+                  :user    => 'pikesley',
+                  :project => 'uncle-clive',
+                  :ribbon  => 'right_darkblue_121621'
+              }
           }
 
         when 'text/plain'
