@@ -14,7 +14,7 @@ require 'rack-google-analytics'
 class Spectrum < Sinatra::Base
   use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
 
-  @@layout_locals = {
+  @@locals = {
       :bootstrap_theme   => '../lavish-bootstrap.css',
       :additional_styles => [
           '../sinclair.css'
@@ -27,12 +27,12 @@ class Spectrum < Sinatra::Base
   }
 
   get '/' do
-    l = {
-        :title => '© 1982 Sinclair Research Ltd.',
-        :text  => markdown(File.read('README.md'))
-    }
-
-    haml :readme, :locals => @@layout_locals.merge(l)
+    haml :readme, :locals => @@locals.merge(
+        {
+            :title => '© 1982 Sinclair Research Ltd.',
+            :text  => markdown(File.read('README.md'))
+        }
+    )
   end
 
   get '/:text' do
@@ -72,11 +72,12 @@ class Spectrum < Sinatra::Base
 
         when 'text/html'
           cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
-          l            = {
-              :title => params[:text],
-              :table => cs[params[:text]]
-          }
-          halt haml :tabliser, :locals => @@layout_locals.merge(l)
+          halt haml :tabliser, :locals => @@locals.merge(
+              {
+                  :title => params[:text],
+                  :table => cs[params[:text]]
+              }
+          )
 
         when 'text/plain'
           cs.formatter    = UncleClive::Formatters::TextFormatter.new
