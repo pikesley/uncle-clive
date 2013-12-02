@@ -14,17 +14,24 @@ require 'rack-google-analytics'
 class Spectrum < Sinatra::Base
   use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
 
+  @@locals = {
+      :bootstrap_theme   => '../lavish-bootstrap.css',
+      :additional_styles => [
+          '../sinclair.css'
+      ],
+      :github            => {
+          :user    => 'pikesley',
+          :project => 'uncle-clive',
+          :ribbon  => 'right_darkblue_121621'
+      }
+  }
+
   get '/' do
-    haml :readme, :locals => {
-        :bootstrap_theme => '../lavish-bootstrap.css',
-        :title           => '© 1982 Sinclair Research Ltd.',
-        :text            => markdown(File.read('README.md')),
-        :github          => {
-            :user    => 'pikesley',
-            :project => 'uncle-clive',
-            :ribbon  => 'right_darkblue_121621'
+    haml :readme, :locals => @@locals.merge(
+        {
+            :title => '© 1982 Sinclair Research Ltd.'
         }
-    }
+    )
   end
 
   get '/:text' do
@@ -64,16 +71,12 @@ class Spectrum < Sinatra::Base
 
         when 'text/html'
           cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
-          halt haml :tabliser, :locals => {
-              :bootstrap_theme => '../lavish-bootstrap.css',
-              :title           => params[:text],
-              :table           => cs[params[:text]],
-              :github          => {
-                  :user    => 'pikesley',
-                  :project => 'uncle-clive',
-                  :ribbon  => 'right_darkblue_121621'
+          halt haml :tabliser, :locals => @@locals.merge(
+              {
+                  :title => params[:text],
+                  :table => cs[params[:text]]
               }
-          }
+          )
 
         when 'text/plain'
           cs.formatter    = UncleClive::Formatters::TextFormatter.new
