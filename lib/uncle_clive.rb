@@ -15,8 +15,11 @@ class Spectrum < Sinatra::Base
   use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
 
   @@layout_locals = {
-      :bootstrap_theme => '../lavish-bootstrap.css',
-      :github          => {
+      :bootstrap_theme   => '../lavish-bootstrap.css',
+      :additional_styles => [
+          '../sinclair.css'
+      ],
+      :github            => {
           :user    => 'pikesley',
           :project => 'uncle-clive',
           :ribbon  => 'right_darkblue_121621'
