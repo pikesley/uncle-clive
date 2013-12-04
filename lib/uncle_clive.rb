@@ -51,14 +51,6 @@ class Spectrum < Sinatra::Base
     respond params[:text], true
   end
 
-  get '/:text/gitfiti' do
-    respond params[:text], true
-  end
-
-  post '/:text/gitfiti' do
-    respond params[:text], true
-  end
-
   def respond text, pokvrosky = false
     cs           = UncleClive::FontGenerator.new
     cs.pokrovsky = pokvrosky

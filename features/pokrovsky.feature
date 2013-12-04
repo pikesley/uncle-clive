@@ -20,7 +20,7 @@ Feature: get height-adjusted JSON
     """
 
   Scenario: Get height-adjusted JSON for longer string
-    When I go to "/1982/gitfiti"
+    When I go to "/1982/pokrovsky"
     Then the response should be JSON:
     """
     {
