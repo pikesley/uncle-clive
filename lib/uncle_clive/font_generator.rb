@@ -2,14 +2,14 @@ require 'json'
 
 module UncleClive
   class FontGenerator
-    attr_accessor :formatter, :on_char, :off_char, :gitfiti
+    attr_accessor :formatter, :on_char, :off_char, :pokrovsky
 
     def initialize char_set_file = "conf/character_set.txt"
       @char_set_file = char_set_file
-      @chars    = {}
-      @on_char  = "1"
-      @off_char = "0"
-      @gitfiti   = false
+      @chars         = {}
+      @on_char       = "1"
+      @off_char      = "0"
+      @pokrovsky     = false
       get_chars
     end
 
@@ -19,7 +19,7 @@ module UncleClive
         key    = pieces[1]
         values = pieces[2].split(" ").map { |i| i.to_i }
 
-        if @gitfiti
+        if @pokrovsky
           if values[-1] == 0
             values.pop
           elsif values[0] == 0
@@ -32,8 +32,8 @@ module UncleClive
       end
     end
 
-    def gitfiti= bool
-      @gitfiti = bool
+    def pokrovsky= bool
+      @pokrovsky = bool
       get_chars
     end
 

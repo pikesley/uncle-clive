@@ -5,6 +5,7 @@ require_relative 'uncle_clive/formatters/json_formatter'
 require_relative 'uncle_clive/formatters/html_table_formatter'
 require_relative 'uncle_clive/formatters/png_formatter'
 require_relative 'uncle_clive/decorators/run_length_encoder'
+require_relative 'uncle_clive/decorators/fourifier'
 
 require 'sinatra/base'
 require 'haml'
@@ -50,17 +51,9 @@ class Spectrum < Sinatra::Base
     respond params[:text], true
   end
 
-  get '/:text/gitfiti' do
-    respond params[:text], true
-  end
-
-  post '/:text/gitfiti' do
-    respond params[:text], true
-  end
-
-  def respond text, gitfiti = false
-    cs         = UncleClive::FontGenerator.new
-    cs.gitfiti = gitfiti
+  def respond text, pokvrosky = false
+    cs           = UncleClive::FontGenerator.new
+    cs.pokrovsky = pokvrosky
 
     request.accept.each do |type|
       case type.to_s

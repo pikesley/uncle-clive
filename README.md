@@ -62,7 +62,7 @@ Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum 
 
 ####/:text/pokrovsky
 
-Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but compressed to fit into 7 rows thus:
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but with 1s replaced with 4s, and compressed to fit into 7 rows thus:
 
 * if a character has a blank bottom row, that row will be excised, else
 * if a character has a blank top row, that row will be excised, else
