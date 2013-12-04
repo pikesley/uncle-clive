@@ -6,7 +6,7 @@ module UncleClive
       before :each do
         @cs           = FontGenerator.new
         @cs.formatter = UncleClive::Formatters::JSONFormatter.new
-        @cs.gitfiti   = true
+        @cs.pokrovsky   = true
       end
 
       it "should return JSON with 7 lines" do
@@ -28,13 +28,13 @@ module UncleClive
         @cs['©'].should == {
             :id   => "©",
             :data => [
-                [0, 0, 1, 1, 1, 1, 0, 0],
-                [0, 1, 0, 0, 0, 0, 1, 0],
-                [1, 0, 0, 1, 1, 0, 0, 1],
-                [1, 0, 1, 0, 0, 0, 0, 1],
-                [1, 0, 0, 1, 1, 0, 0, 1],
-                [0, 1, 0, 0, 0, 0, 1, 0],
-                [0, 0, 1, 1, 1, 1, 0, 0]
+                [0, 0, 4, 4, 4, 4, 0, 0],
+                [0, 4, 0, 0, 0, 0, 4, 0],
+                [4, 0, 0, 4, 4, 0, 0, 4],
+                [4, 0, 4, 0, 0, 0, 0, 4],
+                [4, 0, 0, 4, 4, 0, 0, 4],
+                [0, 4, 0, 0, 0, 0, 4, 0],
+                [0, 0, 4, 4, 4, 4, 0, 0]
             ]
         }.to_json
       end

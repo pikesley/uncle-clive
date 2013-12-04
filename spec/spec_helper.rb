@@ -4,6 +4,8 @@ require 'uncle_clive/formatters/json_formatter'
 require 'uncle_clive/formatters/html_table_formatter'
 require 'uncle_clive/formatters/png_formatter'
 require 'uncle_clive/decorators/run_length_encoder'
+require 'uncle_clive/decorators/fourifier'
+
 require 'coveralls'
 Coveralls.wear!
 

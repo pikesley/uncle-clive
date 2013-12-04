@@ -19,8 +19,8 @@ module NavigationHelpers
       when /a b c/
         '/a%20b%20c'
 
-      when /a\/gitfiti/
-        '/a/gitfiti'
+      when /a\/pokrovsky/
+        '/a/pokrovsky'
 
       when /a/
         '/a'
