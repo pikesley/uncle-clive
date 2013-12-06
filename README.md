@@ -2,9 +2,8 @@
 [![Dependency Status](https://gemnasium.com/pikesley/uncle-clive.png)](https://gemnasium.com/pikesley/uncle-clive)
 [![Code Climate](https://codeclimate.com/github/pikesley/uncle-clive.png)](https://codeclimate.com/github/pikesley/uncle-clive)
 [![Coverage Status](https://coveralls.io/repos/pikesley/uncle-clive/badge.png?branch=master)](https://coveralls.io/r/pikesley/uncle-clive?branch=master)
-[![License](http://img.shields.io/license/mit.png?color=green)](http://pikesley.mit-license.org/)
 [![Things Cleaned](http://img.shields.io/things%20cleaned/all.png?color=green)](http://hyperboleandahalf.blogspot.co.uk/2010/06/this-is-why-ill-never-be-adult.html)
-[![This Badge](http://img.shields.io/this%20badge/attained.png?color=green)](http://www.pokemon.com/uk/)
+[![License](http://img.shields.io/license/mit.png?color=green)](http://pikesley.mit-license.org/)
 [![Badge Status](http://img.shields.io/badges/7/7.png?color=green
 )](http://www.youtube.com/watch?v=s7rHCYtbZRo)
 
