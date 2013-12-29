@@ -20,10 +20,10 @@ module UncleClive
         values = pieces[2].split(" ").map { |i| i.to_i }
 
         if @pokrovsky
-          if values[-1] == 0
-            values.pop
-          elsif values[0] == 0
+          if values[0] == 0
             values.shift
+          elsif values[-1] == 0
+            values.pop
           else
             values = values[0..3] + values[5..7]
           end
