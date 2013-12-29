@@ -68,8 +68,8 @@ Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum 
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but compressed to fit into 7 rows thus:
 
-* if a character has a blank bottom row, that row will be excised, else
 * if a character has a blank top row, that row will be excised, else
+* if a character has a blank bottom row, that row will be excised, else
 * _rows[4]_ will be excised
 
 The JSON form of this also has its 1s replaced by 4s, and is designed for use with [Pokrovsky](https://pokrovsky.herokuapp.com)
