@@ -11,7 +11,7 @@
 
 ##Sinclair Spectrum Font as a Service
 
-_v0.2.0_
+_v0.2.1_
 
 ##Introduction
 
