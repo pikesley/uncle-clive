@@ -1,11 +1,10 @@
-[![Build Status](https://api.travis-ci.org/pikesley/uncle-clive.png)](https://travis-ci.org/pikesley/uncle-clive)
+[![Build Status](http://b.adge.me/travis/pikesley/uncle-clive.svg)](https://travis-ci.org/pikesley/uncle-clive)
+[![Coverage Status](http://b.adge.me/coveralls/pikesley/uncle-clive.svg)](https://coveralls.io/r/pikesley/uncle-clive?branch=master)
 [![Dependency Status](https://gemnasium.com/pikesley/uncle-clive.png)](https://gemnasium.com/pikesley/uncle-clive)
 [![Code Climate](https://codeclimate.com/github/pikesley/uncle-clive.png)](https://codeclimate.com/github/pikesley/uncle-clive)
-[![Coverage Status](https://coveralls.io/repos/pikesley/uncle-clive/badge.png?branch=master)](https://coveralls.io/r/pikesley/uncle-clive?branch=master)
-[![Things Cleaned](http://img.shields.io/things%20cleaned/all.png?color=green)](http://hyperboleandahalf.blogspot.co.uk/2010/06/this-is-why-ill-never-be-adult.html)
-[![License](http://img.shields.io/license/mit.png?color=green)](http://pikesley.mit-license.org/)
-[![Badge Status](http://img.shields.io/badges/7/7.png?color=green
-)](http://www.youtube.com/watch?v=s7rHCYtbZRo)
+[![License](http://b.adge.me/:license-mit-green.svg)](http://pikesley.mit-license.org/)
+[![Things Cleaned](http://b.adge.me/:things%20cleaned-all-green.svg)](http://hyperboleandahalf.blogspot.co.uk/2010/06/this-is-why-ill-never-be-adult.html)
+[![Badge Status](http://b.adge.me/:badges-7/7-green.svg)](http://www.youtube.com/watch?v=s7rHCYtbZRo)
 
 #Uncle Clive
 
