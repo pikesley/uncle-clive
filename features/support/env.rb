@@ -9,7 +9,7 @@ require 'capybara/cucumber'
 require 'rspec'
 
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear_merged!
 
 Capybara.app = Spectrum
 
