@@ -22,7 +22,7 @@ It's mostly an exercise in me learning how to do REST and conneg (and possibly s
 
 Uncle-Clive will respond to the following _Accept_ values with appropriate content:
 
-####application/json
+####`application/json`
 
 Content will be returned as a JSON object thus:
 
@@ -40,7 +40,7 @@ Content will be returned as a JSON object thus:
       ]
     }
 
-####text/plain
+####`text/plain`
 
 Content will be returned as plain text formatted thus:
 
@@ -53,17 +53,17 @@ Content will be returned as plain text formatted thus:
 
 See the [`examples/console.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/console.rb) script for an example.
 
-####text/html
+####`text/html`
 
 Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table.
 
 ###API
 
-####/:text
+####`/:text`
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
 
-####/:text/pokrovsky
+####`/:text/pokrovsky`
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but compressed to fit into 7 rows thus:
 
