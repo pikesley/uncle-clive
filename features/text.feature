@@ -12,7 +12,7 @@ Feature: get text
 .    [][][][]
     """
 
-  Scenario: Get JSON for longer string
+  Scenario: Get text for longer string
     When I go to "/1982"
     Then the response should be a text block:
     """
