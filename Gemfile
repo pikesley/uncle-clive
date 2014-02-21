@@ -10,7 +10,7 @@ gem 'haml'
 gem 'rake'
 gem 'kramdown'
 gem 'activesupport'
-gem 'rack-google-analytics'
+gem 'rack-google-analytics', '~> 1.0'
 gem 'chunky_png'
 
 group :test do
