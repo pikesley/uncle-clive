@@ -78,7 +78,7 @@ class Spectrum < Sinatra::Base
 
         when 'image/png'
           cs.formatter = UncleClive::Formatters::PNGFormatter.new
-          attachment
+  #        attachment
           content_type 'image/png'
           send_file cs[params[:text]].to_blob, :type => :png
 
