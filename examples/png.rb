@@ -4,11 +4,11 @@ require 'chunky_png'
 require 'curb'
 require 'json'
 
-ssfaas   = 'http://uncleclive.herokuapp.com/'
+ssfaas     = 'http://uncleclive.herokuapp.com/'
 pixel_size = 8
-colour = "#000000"
-outfile = "/tmp/sinclair.png"
-s        = 'R Tape loading error'
+colour     = "#000000"
+outfile    = "/tmp/sinclair.png"
+s          = 'R Tape loading error'
 
 if ARGV[0]
   s = ARGV[0]
