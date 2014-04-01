@@ -12,6 +12,7 @@ gem 'kramdown'
 gem 'activesupport'
 gem 'rack-google-analytics'
 gem 'chunky_png'
+gem 'actionpack', '~> 4'
 
 group :test do
   gem 'capybara-webkit'
