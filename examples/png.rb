@@ -5,8 +5,9 @@ require 'curb'
 require 'json'
 
 ssfaas     = 'http://uncleclive.herokuapp.com/'
-pixel_size = 8
+pixel_size = 16
 colour     = "#000000"
+inner_colour = "#ff9900"
 outfile    = "/tmp/sinclair.png"
 s          = 'R Tape loading error'
 
@@ -31,7 +32,7 @@ lines.each do |line|
   line.each do |bit|
     case bit.to_i
       when 1
-        image.rect x, y, x + pixel_size - 1, y + pixel_size - 1, colour, colour
+        image.rect x, y, x + pixel_size - 1, y + pixel_size - 1, colour, inner_colour
     end
     x += pixel_size
   end
