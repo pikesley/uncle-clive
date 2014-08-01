@@ -43,17 +43,8 @@ class Spectrum < Sinatra::Base
     respond params[:text]
   end
 
-  get '/:text/pokrovsky' do
-    respond params[:text], true
-  end
-
-  post '/:text/pokrovsky' do
-    respond params[:text], true
-  end
-
-  def respond text, pokvrosky = false
+  def respond text
     cs           = UncleClive::FontGenerator.new
-    cs.pokrovsky = pokvrosky
 
     request.accept.each do |type|
       case type.to_s

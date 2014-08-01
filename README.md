@@ -9,13 +9,13 @@
 
 ##Sinclair Spectrum Font as a Service
 
-_v0.2.1_
+_v1.0.0_
 
 ##Introduction
 
 You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm _almost 100% certain does not exist_ - rendering text in the 1982 Sinclair Spectrum character set.
 
-It's mostly an exercise in me learning how to do REST and conneg (and possibly semver).
+It's mostly an exercise in me learning how to do REST and content-negotiation (and possibly semantic-versioning) properly.
 
 ###Content negotiation
 
@@ -60,17 +60,7 @@ Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron cont
 
 ####`/:text`
 
-Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
-
-####`/:text/pokrovsky`
-
-Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set, but compressed to fit into 7 rows thus:
-
-* if a character has a blank top row, that row will be excised, else
-* if a character has a blank bottom row, that row will be excised, else
-* _rows[4]_ will be excised
-
-The JSON form of this also has its 1s replaced by 4s, and is designed for use with [Pokrovsky](https://pokrovsky.herokuapp.com)
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set. I've tried to get Sinatra to render this for me but apparently I have no idea how that's supposed to work.
 
 ###Notes
 
