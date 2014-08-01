@@ -78,9 +78,13 @@ class Spectrum < Sinatra::Base
 
         when 'image/png'
           cs.formatter = UncleClive::Formatters::PNGFormatter.new
-  #        attachment
+#          attachment
           content_type 'image/png'
-          send_file cs[params[:text]].to_blob, :type => :png
+#          f = File.open 'public/%s' % params[:text], 'w'
+          f = File.open('x.png', 'w')
+          f.write cs[params[:text]]
+          f.close
+          redirect '/x.png'
 
         else
           halt "Nothing to see here"
