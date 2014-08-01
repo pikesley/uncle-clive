@@ -78,9 +78,7 @@ class Spectrum < Sinatra::Base
 
         when 'image/png'
           cs.formatter = UncleClive::Formatters::PNGFormatter.new
-#          attachment
           content_type 'image/png'
-#          f = File.open 'public/%s' % params[:text], 'w'
           f = File.open('x.png', 'w')
           f.write cs[params[:text]]
           f.close
