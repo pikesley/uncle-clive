@@ -1,4 +1,4 @@
-Before('@json, @pokrovsky') do
+Before('@json') do
   add_headers(
       {
           'Accept' => 'application/json'

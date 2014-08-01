@@ -29,6 +29,8 @@ module UncleClive
           y += @size
         end
 
+    #    @image.to_image.to_datastream.save('/tmp/derp.png')
+    #    @image.to_image.to_datastream
         @image #.to_image.to_datastream
       end
 

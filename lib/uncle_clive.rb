@@ -43,17 +43,8 @@ class Spectrum < Sinatra::Base
     respond params[:text]
   end
 
-  get '/:text/pokrovsky' do
-    respond params[:text], true
-  end
-
-  post '/:text/pokrovsky' do
-    respond params[:text], true
-  end
-
-  def respond text, pokvrosky = false
+  def respond text
     cs           = UncleClive::FontGenerator.new
-    cs.pokrovsky = pokvrosky
 
     request.accept.each do |type|
       case type.to_s
@@ -78,9 +69,11 @@ class Spectrum < Sinatra::Base
 
         when 'image/png'
           cs.formatter = UncleClive::Formatters::PNGFormatter.new
-  #        attachment
           content_type 'image/png'
-          send_file cs[params[:text]].to_blob, :type => :png
+          f = File.open('x.png', 'w')
+          f.write cs[params[:text]]
+          f.close
+          redirect '/x.png'
 
         else
           halt "Nothing to see here"
