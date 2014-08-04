@@ -158,7 +158,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (~> 4)
+  actionpack
   activesupport
   capybara-webkit
   chunky_png
