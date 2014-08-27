@@ -60,11 +60,11 @@ Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron cont
 
 ####`/:text`
 
-Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set. I've tried to get Sinatra to render this for me but apparently I have no idea how that's supposed to work.
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
 
 ###Notes
 
-See also the [`examples/png.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/png.rb) script for an example of using the excellent [chunky_png](https://github.com/wvanbergen/chunky_png) library to generate PNG images from the JSON content.
+See also the [`examples/png.rb`](https://github.com/pikesley/uncle-clive/blob/master/examples/png.rb) script for an example of using the excellent [chunky_png](https://github.com/wvanbergen/chunky_png) library to generate PNG images from the JSON content.  I've tried to get Sinatra to render this for me but apparently I have no idea how that's supposed to work.
 
 ###History
 
