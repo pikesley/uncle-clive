@@ -5,4 +5,4 @@ deploy:
   provider: heroku
   app: uncleclive
   api_key:
-    secure: a62fNBAJJaRcCTC0speNZCoH61dpR0WNgDIVt1kj5cNNvB+dNdUtWWHBGVWdEW9++f9DQFCS/7Lsn+7EKMmyZ1uyQKxJhyvX5hCbdyDVK9/WAOonCgMbx1r2aD3J1v02gSEs5lVs/Z3yrLy9gfwNWdR7l9IPl1p43Rg2YdPya2Y=
+    secure: "nXDladi4HMHb5EOpWHf+BMHFaeJasHle3d/9Fnj+8aFPBGqeVmx4aQwNN1+26m2sQpXWoY9OkLcuuDOM1j5xZv4DEKyTnU7J66XDmE1giNYp6il2Kxg71iflLdJbpt2oPrUczLk9/28xhlkd8yau5ti+c7FgdRQNLJli7fEZpgk="
