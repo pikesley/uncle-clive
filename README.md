@@ -70,5 +70,5 @@ See also the [`examples/png.rb`](https://github.com/pikesley/uncle-clive/blob/ma
 
 This is at least the third time I've implemented this or something like it:
 
-* [PHP version](http://toys.param3.com/sinclair/), initially written in 2003
+* PHP version, initially written in 2003, now lost to the mists of time
 * [Python version](http://org.orgraphone.org/2010/09/the-sinclair-spectrum-font-simulator/) from 2010
