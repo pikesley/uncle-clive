@@ -11,8 +11,6 @@ require 'sinatra/base'
 require 'haml'
 require 'kramdown'
 require 'rack-google-analytics'
-require 'tilt/haml'
-require 'tilt/redcarpet'
 
 class Spectrum < Sinatra::Base
   use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
