@@ -12,6 +12,7 @@ module UncleClive
 
     it 'should give us an array of bits' do
       @cs.bytes(' ')[0].should == [0, 0, 0, 0, 0, 0, 0, 0]
+      @cs.bytes('s')[2].should == [0, 0, 1, 1, 1, 0, 0, 0]
     end
 
     it 'should return an array of arrays' do
