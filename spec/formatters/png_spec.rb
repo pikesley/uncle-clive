@@ -4,12 +4,12 @@ module UncleClive
   module Formatters
     describe PNGFormatter do
       let(:fg) { FontGenerator.new }
-      
+
       before :each do
         fg.formatter = UncleClive::Formatters::PNGFormatter.new
       end
 
-      it 'should return a PNG' do
+      it 'returns a PNG' do
         png = fg['ODI']
         expect(png.class).to eq ChunkyPNG::Canvas
 

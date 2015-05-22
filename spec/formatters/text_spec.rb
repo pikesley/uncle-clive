@@ -9,7 +9,7 @@ module UncleClive
         fg.formatter = UncleClive::Formatters::TextFormatter.new
       end
 
-      it 'should give us a correct character' do
+      it 'gives us a correct character' do
         expect(fg['a']).to eq (
 """
 00000000
@@ -24,7 +24,7 @@ module UncleClive
 ).strip
       end
 
-      it 'should give us a correct string' do
+      it 'gives us a correct string' do
         expect(fg['ab']).to eq (
 """
 0000000000000000
@@ -39,7 +39,7 @@ module UncleClive
 ).strip
       end
 
-      it 'should be able to handle keys like ©' do
+      it 'is able to handle keys like ©' do
         expect(fg['©']).to eq (
 """
 00111100
@@ -54,7 +54,7 @@ module UncleClive
 ).strip
       end
 
-      it 'should recognise ' ' as a key' do
+      it 'recognises " " as a key' do
         expect(fg[' ']).to eq (
 """
 00000000
@@ -69,7 +69,7 @@ module UncleClive
 ).strip
       end
 
-      it 'should return characters other than zeroes and ones' do
+      it 'returns characters other than zeroes and ones' do
         fg.formatter = UncleClive::Formatters::TextFormatter.new({ :on => 'X', :off => '.' })
         expect(fg['Sam']).to eq (
 """

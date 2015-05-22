@@ -4,16 +4,16 @@ module UncleClive
   describe FontGenerator do
     let(:fg) { FontGenerator.new }
 
-    it 'should have the correct keys and values' do
+    it 'has the correct keys and values' do
       expect(fg.raw_data 'a').to eq [0, 0, 56, 4, 60, 68, 60, 0]
     end
 
-    it 'should give us an array of bits' do
+    it 'gives us an array of bits' do
       expect(fg.bytes(' ')[0]).to eq [0, 0, 0, 0, 0, 0, 0, 0]
       expect(fg.bytes('s')[2]).to eq [0, 0, 1, 1, 1, 0, 0, 0]
     end
 
-    it 'should return an array of arrays' do
+    it 'returns an array of arrays' do
       expect(fg[' ']).to eq [
           [0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 0, 0, 0, 0, 0, 0],
@@ -26,7 +26,7 @@ module UncleClive
       ]
     end
 
-    it 'should return the arrays for longer strings' do
+    it 'returns the arrays for longer strings' do
       expect(fg['1982']).to eq [
           [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
@@ -39,7 +39,7 @@ module UncleClive
       ]
     end
 
-    it 'should handle a non-existent key gracefully' do
+    it 'handles a non-existent key gracefully' do
       expect(fg['€']).to eq [
           [0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 0, 0, 0, 0, 0, 0],
@@ -52,7 +52,7 @@ module UncleClive
       ]
     end
 
-    it 'should recognise a double-quote as a key' do
+    it 'recognises a double-quote as a key' do
       expect(fg['"']).to eq [
           [0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 1, 0, 0, 1, 0, 0],
@@ -65,7 +65,7 @@ module UncleClive
       ]
     end
 
-    it 'should know what a forward-slash is' do
+    it 'knows what a forward-slash is' do
       expect(fg['/']).to eq [
           [0, 0, 0, 0, 0, 0, 0, 0],
           [0, 0, 0, 0, 0, 0, 0, 0],

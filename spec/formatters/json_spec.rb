@@ -9,7 +9,7 @@ module UncleClive
         fg.formatter = UncleClive::Formatters::JSONFormatter.new
       end
 
-      it 'should return JSON' do
+      it 'returns JSON' do
         expect(fg[' ']).to eq ({
             :id   => ' ',
             :data => [
@@ -25,7 +25,7 @@ module UncleClive
         }.to_json)
       end
 
-      it 'should return JSON for longer strings' do
+      it 'returns JSON for longer strings' do
         expect(fg['1982']).to eq ({
             :id   => '1982',
             :data => [
@@ -41,7 +41,7 @@ module UncleClive
         }.to_json)
       end
 
-      it 'should handle a non-existent key gracefully' do
+      it 'handles a non-existent key gracefully' do
         expect(fg['€']).to eq ({
             :id   => '€',
             :data => [
@@ -57,7 +57,7 @@ module UncleClive
         }.to_json)
       end
 
-      it 'should recognise a double-quote as a key' do
+      it 'recognises a double-quote as a key' do
         expect(fg['"']).to eq ({
             :id   => '"',
             :data => [
@@ -73,7 +73,7 @@ module UncleClive
         }.to_json)
       end
 
-      it 'should know what a forward-slash is' do
+      it 'knows what a forward-slash is' do
         expect(fg['/']).to eq ({
             :id   => '/',
             :data => [
