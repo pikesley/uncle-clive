@@ -3,17 +3,18 @@ require 'spec_helper'
 module UncleClive
   module Formatters
     describe PNGFormatter do
+      let(:fg) { FontGenerator.new }
+
       before :each do
-        @cs           = FontGenerator.new
-        @cs.formatter = UncleClive::Formatters::PNGFormatter.new
+        fg.formatter = UncleClive::Formatters::PNGFormatter.new
       end
 
-      it "should return a PNG" do
-        png = @cs['ODI']
-        png.class.should == ChunkyPNG::Canvas
+      it 'returns a PNG' do
+        png = fg['ODI']
+        expect(png.class).to eq ChunkyPNG::Canvas
 
-        png.width.should == 192
-        png.height.should == 64
+        expect(png.width).to eq 192
+        expect(png.height).to eq 64
       end
     end
   end

@@ -3,44 +3,35 @@ require 'spec_helper'
 module UncleClive
   module Decorators
     describe RunLengthEncoder do
-      before :each do
-        @cs    = RunLengthEncoder.new FontGenerator.new
-        @lines = @cs['b']
+      let(:fg) { RunLengthEncoder.new FontGenerator.new }
+      let(:lines) { fg['b'] }
+
+      it 'has lines' do
+        expect(lines.length).to eq 8
       end
 
-      it "should have lines" do
-        @lines.length.should == 8
+      it 'has lines containing arrays of hashes' do
+        expect(lines[0].class).to eq Array
+        expect(lines[0][0].class).to eq Hash
       end
 
-      it "should have lines containing arrays of hashes" do
-        @lines[0].class.should == Array
-        @lines[0][0].class.should == Hash
+      it 'has a first line of zeroes' do
+        expect(lines[0][0]).to eq ({ 0 => 8 })
       end
 
-      it "should have a first line of 0's" do
-        @lines[0][0].should == {
-            0 => 8
-        }
-      end
-
-      it "should encode a row correctly" do
-        @cs.encode([1, 1, 1, 0, 0, 0, 1]).should == [
-            {
-                1 => 3
-            },
-            {
-                0 => 3
-            },
-            {
-                1 => 1
-            }
+      it 'encodes a row correctly' do
+        expect(fg.encode [1, 1, 1, 0, 0, 0, 1]).to eq [
+          { 1 => 3 },
+          { 0 => 3 },
+          { 1 => 1 }
         ]
       end
-      it "should have a second line thus" do
-        @lines[1].should == [
-            {0 => 2},
-            {1 => 1},
-            {0 => 5}
+
+      it 'has a second line thus' do
+        expect(lines[1]).to eq [
+          { 0 => 2 },
+          { 1 => 1 },
+          { 0 => 5 }
         ]
       end
     end

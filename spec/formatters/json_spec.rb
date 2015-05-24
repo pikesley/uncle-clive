@@ -3,14 +3,15 @@ require 'spec_helper'
 module UncleClive
   module Formatters
     describe JSONFormatter do
+      let(:fg) { FontGenerator.new }
+
       before :each do
-        @cs           = FontGenerator.new
-        @cs.formatter = UncleClive::Formatters::JSONFormatter.new
+        fg.formatter = UncleClive::Formatters::JSONFormatter.new
       end
 
-      it "should return JSON" do
-        @cs[' '].should == {
-            :id   => " ",
+      it 'returns JSON' do
+        expect(fg[' ']).to eq ({
+            :id   => ' ',
             :data => [
                 [0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0],
@@ -21,12 +22,12 @@ module UncleClive
                 [0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0]
             ]
-        }.to_json
+        }.to_json)
       end
 
-      it "should return JSON for longer strings" do
-        @cs['1982'].should == {
-            :id   => "1982",
+      it 'returns JSON for longer strings' do
+        expect(fg['1982']).to eq ({
+            :id   => '1982',
             :data => [
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
@@ -37,12 +38,12 @@ module UncleClive
                 [0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
-        }.to_json
+        }.to_json)
       end
 
-      it "should handle a non-existent key gracefully" do
-        @cs['€'].should == {
-            :id   => "€",
+      it 'handles a non-existent key gracefully' do
+        expect(fg['€']).to eq ({
+            :id   => '€',
             :data => [
                 [0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0],
@@ -53,11 +54,11 @@ module UncleClive
                 [0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0]
             ]
-        }.to_json
+        }.to_json)
       end
 
-      it "should recognise a double-quote as a key" do
-        @cs['"'].should == {
+      it 'recognises a double-quote as a key' do
+        expect(fg['"']).to eq ({
             :id   => '"',
             :data => [
                 [0, 0, 0, 0, 0, 0, 0, 0],
@@ -69,12 +70,12 @@ module UncleClive
                 [0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0]
             ]
-        }.to_json
+        }.to_json)
       end
 
-      it "should know what a forward-slash is" do
-        @cs['/'].should == {
-            :id   => "/",
+      it 'knows what a forward-slash is' do
+        expect(fg['/']).to eq ({
+            :id   => '/',
             :data => [
                 [0, 0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0],
@@ -85,7 +86,7 @@ module UncleClive
                 [0, 0, 1, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0]
             ]
-        }.to_json
+        }.to_json)
       end
     end
   end
