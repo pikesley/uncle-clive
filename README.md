@@ -1,9 +1,9 @@
-[![Build Status](http://img.shields.io/travis/pikesley/uncle-clive.svg)](https://travis-ci.org/pikesley/uncle-clive)
-[![Dependency Status](http://img.shields.io/gemnasium/pikesley/uncle-clive.svg)](https://gemnasium.com/pikesley/uncle-clive)
-[![Coverage Status](http://img.shields.io/coveralls/pikesley/uncle-clive.svg)](https://coveralls.io/r/pikesley/uncle-clive)
-[![Code Climate](http://img.shields.io/codeclimate/github/pikesley/uncle-clive.svg)](https://codeclimate.com/github/pikesley/uncle-clive)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://pikesley.mit-license.org)
-[![Badges](http://img.shields.io/:badges-6/6-ff6799.svg)](https://github.com/pikesley/badger)
+[![Build Status](http://img.shields.io/travis/pikesley/uncle-clive.svg?style=flat-square)](https://travis-ci.org/pikesley/uncle-clive)
+[![Dependency Status](http://img.shields.io/gemnasium/pikesley/uncle-clive.svg?style=flat-square)](https://gemnasium.com/pikesley/uncle-clive)
+[![Coverage Status](http://img.shields.io/coveralls/pikesley/uncle-clive.svg?style=flat-square)](https://coveralls.io/r/pikesley/uncle-clive)
+[![Code Climate](http://img.shields.io/codeclimate/github/pikesley/uncle-clive.svg?style=flat-square)](https://codeclimate.com/github/pikesley/uncle-clive)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://pikesley.mit-license.org)
+[![Badges](http://img.shields.io/:badges-6/6-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
 
 #Uncle Clive
 
