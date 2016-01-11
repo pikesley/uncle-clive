@@ -11,22 +11,9 @@ require 'sinatra/base'
 require 'haml'
 require 'kramdown'
 require 'rack-google-analytics'
-require 'rack/conneg'
 
 class Spectrum < Sinatra::Base
   use Rack::GoogleAnalytics, :tracker => 'UA-20895204-11'
-
-  use Rack::Conneg do |conneg|
-    conneg.set :accept_all_extensions, false
-    conneg.set :fallback, :html
-    conneg.ignore('/css/')
-    conneg.provide [
-      :html,
-      :json,
-      :text,
-      :png
-    ]
-  end
 
   @@locals = {
 #      :bootstrap_theme   => '../lavish-bootstrap.css',
@@ -49,37 +36,47 @@ class Spectrum < Sinatra::Base
   end
 
   get '/:text' do
+    respond params[:data]
+  end
+
+  post '/:text' do
+    respond params[:text]
+  end
+
+  def respond text
     cs           = UncleClive::FontGenerator.new
 
-    respond_to do |wants|
-      wants.json do
-        cs.formatter = UncleClive::Formatters::JSONFormatter.new
-        cs[params[:text]]
-      end
+    request.accept.each do |type|
+      case type.to_s
 
-      wants.html do
-        cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
-        haml :tabliser, :locals => @@locals.merge(
-          {
-            :title => params[:text],
-            :table => cs[params[:text]]
-          }
-        )
-      end
+        when 'application/json'
+          cs.formatter = UncleClive::Formatters::JSONFormatter.new
+          halt cs[params[:text]]
 
-      wants.text do
-        cs.formatter    = UncleClive::Formatters::TextFormatter.new
-        cs.formatter.on = "[]"
-        cs[params[:text]]
-      end
+        when 'text/html'
+          cs.formatter = UncleClive::Formatters::HTMLTableFormatter.new
+          halt haml :tabliser, :locals => @@locals.merge(
+              {
+                  :title => params[:text],
+                  :table => cs[params[:text]]
+              }
+          )
 
-      wants.png do
-        cs.formatter = UncleClive::Formatters::PNGFormatter.new
-        content_type 'image/png'
-        f = File.open('x.png', 'w')
-        f.write cs[params[:text]]
-        f.close
-        redirect '/x.png'
+        when 'text/plain'
+          cs.formatter    = UncleClive::Formatters::TextFormatter.new
+          cs.formatter.on = "[]"
+          halt cs[params[:text]]
+
+        when 'image/png'
+          cs.formatter = UncleClive::Formatters::PNGFormatter.new
+          content_type 'image/png'
+          f = File.open('x.png', 'w')
+          f.write cs[params[:text]]
+          f.close
+          redirect '/x.png'
+
+        else
+          halt "Nothing to see here"
       end
     end
   end

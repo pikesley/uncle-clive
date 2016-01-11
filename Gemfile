@@ -8,7 +8,6 @@ gem 'rake'
 gem 'kramdown'
 gem 'activesupport'
 gem 'rack-google-analytics'
-gem 'rack-conneg'
 gem 'chunky_png'
 gem 'actionpack' #, '~> 4'
 
