@@ -113,6 +113,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
+    rack-conneg (0.1.5)
+      rack (>= 1.0)
     rack-google-analytics (1.2.0)
       actionpack
       activesupport
@@ -204,6 +206,7 @@ DEPENDENCIES
   guard-rspec
   haml
   kramdown
+  rack-conneg
   rack-google-analytics
   rack-test
   rake
@@ -214,4 +217,4 @@ DEPENDENCIES
   thin
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
