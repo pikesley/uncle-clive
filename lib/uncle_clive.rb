@@ -29,6 +29,8 @@ module UncleClive
     end
 
     get '/:text' do
+      headers( 'Access-Control-Allow-Origin' => '*' )
+      
       respond_to do |wants|
         wants.json do
           Nineteen::Eighty::Two::Formats::JSON.format params[:text]
