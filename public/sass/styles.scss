@@ -9,3 +9,14 @@ h1 {
   color: $brand-primary;
   font-family: $font-primary;
 }
+
+#readme {
+  em {
+    a {
+      @extend .btn;
+      @extend .btn-default;
+      background-color: $brand-primary;
+      border: none;
+    }
+  }
+}

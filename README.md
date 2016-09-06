@@ -39,6 +39,8 @@ Content will be returned as a JSON object thus:
       ]
     }
 
+_[example](http://uncleclive.herokuapp.com/1982.json)_
+
 ####`text/plain`
 
 Content will be returned as plain text formatted thus:
@@ -51,21 +53,25 @@ Content will be returned as plain text formatted thus:
         ()                  ()    ()        ()    ()            
     ()()()()()      ()()()()        ()()()()      ()()()()()()  
 
+_[example](http://uncleclive.herokuapp.com/1982.text)_
 
 ####`text/html`
 
-Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table ([example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd))
+Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table
+
+_[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
 
 ####`image/svg+xml`
 
-Content will be returned as an SVG image ([example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg))
+Content will be returned as an SVG image
+
+_[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg)_
 
 ###API
 
 ####`/:text`
 
 Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
-
 
 ###History
 
