@@ -20,8 +20,7 @@ module UncleClive
 
       respond_to do |wants|
         wants.html do
-          @content = '<h1>Hello from UncleClive</h1>'
-          @title = 'UncleClive'
+          @title = '© 1982 Sinclair Research Ltd.'
           @github_url = CONFIG['github_url']
           erb :index, layout: :default
         end
@@ -30,7 +29,7 @@ module UncleClive
 
     get '/:text' do
       headers( 'Access-Control-Allow-Origin' => '*' )
-      
+
       respond_to do |wants|
         wants.json do
           Nineteen::Eighty::Two::Formats::JSON.format params[:text]
