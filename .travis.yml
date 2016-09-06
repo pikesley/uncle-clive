@@ -1,3 +1,10 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: WRhzdJ99lE1yejgTcTn5qHmMbt1JHEeVWwrRS6RXu81mNkE3/6xb4N61/bgJaoxl0quQk0+u9I5m3e1zWE1cnNIYLwIF1gKcp7zXrir5gmSXNqxXcxmQHkFNb6VWhSMVNBo7nCmL4Pde4kahg1Rm97bvIuHO0t6wRmw582fY6cU=
+  app: uncleclive
+  on:
+    repo: pikesley/uncle-clive
