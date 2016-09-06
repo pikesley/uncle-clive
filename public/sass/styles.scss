@@ -1,0 +1,11 @@
+@import 'bootstrap';
+@import 'fonts';
+@import 'variables';
+@import 'footer';
+@import 'sinclair';
+@import 'github-corner';
+
+h1 {
+  color: $brand-primary;
+  font-family: $font-primary;
+}
