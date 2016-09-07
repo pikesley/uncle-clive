@@ -8,13 +8,13 @@
 
 ##Sinclair Spectrum Font as a Service
 
-_v2.0.0_
+_v1.1.0_
 
 ##Introduction
 
 You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Clive is a massively over-engineered solution to a problem that I'm _almost 100% certain does not exist_ - rendering text in the 1982 Sinclair Spectrum character set
 
-This has now been completely rewritten to make use of my new [1982](https://github.com/pikesley/nineteen-eighty-two) gem, and my [Skellington](http://sam.pikesley.org/projects/skellington/) Sinatra-app-generation tool
+This has now been completely rewritten to make use of my new [1982](http://sam.pikesley.org/projects/1982/) gem, and my [Skellington](http://sam.pikesley.org/projects/skellington/) Sinatra-app-generation tool
 
 ###Content negotiation
 
