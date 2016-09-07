@@ -54,6 +54,22 @@ module UncleClive
           expect(last_response).to be_ok
           expect(last_response.body.split("\n")[4]).to eq "        fill: #fa8100;"
         end
+
+        it 'serves multi-line SVG' do
+          body = {
+            'text' => [
+              'more',
+              'than',
+              'one',
+              'line'
+            ]
+          }.to_json
+
+          post '/', body, SVG_HEADERS
+          expect(last_response).to be_ok
+          lines = last_response.body.split("\n")
+          expect(lines[0]).to eq"<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'>"
+        end
       end
     end
   end

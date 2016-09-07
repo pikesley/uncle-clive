@@ -50,6 +50,15 @@ module UncleClive
       end
     end
 
+    post '/' do
+      respond_to do |wants|
+        wants.svg do
+          j = JSON.parse request.body.read
+          Nineteen::Eighty::Two::Formats::SVG.format j['text'], {colour: "##{params.fetch('colour', '000000')}"}
+        end
+      end
+    end
+
     # start the server if ruby file executed directly
     run! if app_file == $0
   end
