@@ -4,7 +4,7 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/pikesley/uncle-clive.svg?style=flat-square)](https://codeclimate.com/github/pikesley/uncle-clive)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://pikesley.mit-license.org)
 
-#Uncle Clive
+![Uncle Clive](http://uncleclive.herokuapp.com/Uncle%20Clive.svg?colour=fa8100)
 
 ##Sinclair Spectrum Font as a Service
 
@@ -22,33 +22,11 @@ Uncle-Clive will respond to the following _Accept_ values with appropriate conte
 
 ####`application/json` _[example](http://uncleclive.herokuapp.com/1982.json)_
 
-Content will be returned as a JSON object thus:
-
-    {
-      "id": "© 1982",
-      "data": [
-        [0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0],
-        [1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,1,0],
-        [1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,0],
-        [1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,0,0,1,0,0,0,0,1,0,0,0,1,1,1,1,0,0],
-        [1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0],
-        [0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,1,1,1,1,1,1,0],
-        [0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-      ]
-    }
+Content will be returned as a JSON object
 
 ####`text/plain` _[example](http://uncleclive.herokuapp.com/1982.text)_
 
-Content will be returned as plain text formatted thus:
-
-
-      ()()          ()()()()        ()()()()        ()()()()    
-    ()  ()        ()        ()    ()        ()    ()        ()  
-        ()        ()        ()      ()()()()                ()  
-        ()          ()()()()()    ()        ()      ()()()()    
-        ()                  ()    ()        ()    ()            
-    ()()()()()      ()()()()        ()()()()      ()()()()()()  
+Content will be returned as plain text
 
 ####`text/html` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
 
