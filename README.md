@@ -21,7 +21,7 @@ This has now been completely rewritten to make use of my new [1982](https://gith
 
 Uncle-Clive will respond to the following _Accept_ values with appropriate content:
 
-####`application/json`
+####`application/json` _[example](http://uncleclive.herokuapp.com/1982.json)_
 
 Content will be returned as a JSON object thus:
 
@@ -39,9 +39,7 @@ Content will be returned as a JSON object thus:
       ]
     }
 
-_[example](http://uncleclive.herokuapp.com/1982.json)_
-
-####`text/plain`
+####`text/plain` _[example](http://uncleclive.herokuapp.com/1982.text)_
 
 Content will be returned as plain text formatted thus:
 
@@ -53,19 +51,13 @@ Content will be returned as plain text formatted thus:
         ()                  ()    ()        ()    ()            
     ()()()()()      ()()()()        ()()()()      ()()()()()()  
 
-_[example](http://uncleclive.herokuapp.com/1982.text)_
-
-####`text/html`
+####`text/html` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
 
 Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table
 
-_[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
-
-####`image/svg+xml`
+####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg)_
 
 Content will be returned as an SVG image
-
-_[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg)_
 
 ###API
 
