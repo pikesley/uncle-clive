@@ -53,8 +53,8 @@ module UncleClive
     post '/' do
       respond_to do |wants|
         wants.svg do
-          j = JSON.parse request.body.read
-          Nineteen::Eighty::Two::Formats::SVG.format j['text'], {colour: "##{params.fetch('colour', '000000')}"}
+          json = JSON.parse request.body.read
+          Nineteen::Eighty::Two::Formats::SVG.format json['text'], {colour: "#{json.fetch('colour', '#000000')}"}
         end
       end
     end
