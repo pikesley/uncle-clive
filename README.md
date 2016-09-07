@@ -3,7 +3,6 @@
 [![Coverage Status](http://img.shields.io/coveralls/pikesley/uncle-clive.svg?style=flat-square)](https://coveralls.io/r/pikesley/uncle-clive)
 [![Code Climate](http://img.shields.io/codeclimate/github/pikesley/uncle-clive.svg?style=flat-square)](https://codeclimate.com/github/pikesley/uncle-clive)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://pikesley.mit-license.org)
-[![Badges](http://img.shields.io/:badges-6/6-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
 
 #Uncle Clive
 
