@@ -36,7 +36,7 @@ module UncleClive
         end
 
         wants.svg do
-          Nineteen::Eighty::Two::Formats::SVG.format params[:text]
+          Nineteen::Eighty::Two::Formats::SVG.format params[:text], {colour: "##{params.fetch('colour', '000000')}"}
         end
 
         wants.text do

@@ -42,10 +42,18 @@ module UncleClive
         expect(last_response.body.split("\n")[2]).to eq "    ()()()          ()()()        ()      ()        ()()()      "
       end
 
-      it 'serves SVG' do
-        get '/svg', nil, SVG_HEADERS
-        expect(last_response).to be_ok
-        expect(last_response.body.split("\n")[9]).to eq "<rect x='2' y='2' width='3' height='1' class='on' />"
+      context 'SVG' do
+        it 'serves SVG' do
+          get '/svg', nil, SVG_HEADERS
+          expect(last_response).to be_ok
+          expect(last_response.body.split("\n")[9]).to eq "<rect x='2' y='2' width='3' height='1' class='on' />"
+        end
+
+        it 'changes the colour' do
+          get '/svg?colour=fa8100', nil, SVG_HEADERS
+          expect(last_response).to be_ok
+          expect(last_response.body.split("\n")[4]).to eq "        fill: #fa8100;"
+        end
       end
     end
   end
