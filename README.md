@@ -55,7 +55,7 @@ Content will be returned as plain text formatted thus:
 
 Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table
 
-####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg)_
+####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg?colour=fa8100)_
 
 Content will be returned as an SVG image
 
