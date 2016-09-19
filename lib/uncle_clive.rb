@@ -30,31 +30,24 @@ module UncleClive
     get '/:text' do
       headers( 'Access-Control-Allow-Origin' => '*' )
 
+      text = cleave params[:text], separator: params.fetch('line-separator', '---')
+
       respond_to do |wants|
         wants.json do
-          Nineteen::Eighty::Two::Formats::JSON.format params[:text]
+          Nineteen::Eighty::Two::Formats::JSON.format text
         end
 
         wants.svg do
-          Nineteen::Eighty::Two::Formats::SVG.format params[:text], {colour: "##{params.fetch('colour', '000000')}"}
+          Nineteen::Eighty::Two::Formats::SVG.format text, {colour: "##{params.fetch('colour', '000000')}"}
         end
 
         wants.text do
-          Nineteen::Eighty::Two::Formats::Text.format params[:text], {on: '()', off: '  '}
+          Nineteen::Eighty::Two::Formats::Text.format text, {on: '()', off: '  '}
         end
 
         wants.html do
-          @content = Nineteen::Eighty::Two::Formats::HTMLTable.format params[:text]
+          @content = Nineteen::Eighty::Two::Formats::HTMLTable.format text
           erb :table, layout: :default
-        end
-      end
-    end
-
-    post '/' do
-      respond_to do |wants|
-        wants.svg do
-          json = JSON.parse request.body.read
-          Nineteen::Eighty::Two::Formats::SVG.format json['text'], {colour: "#{json.fetch('colour', '#000000')}"}
         end
       end
     end
