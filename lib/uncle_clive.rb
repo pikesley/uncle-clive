@@ -80,7 +80,7 @@ module UncleClive
 
       respond_to do |wants|
         wants.text do
-          message  
+          message
         end
 
         wants.other do
