@@ -93,6 +93,7 @@ module UncleClive
     end
 
     get '/:text' do
+      # This is now deprecated
       headers( 'Access-Control-Allow-Origin' => '*' )
 
       text = cleave params[:text], separator: params.fetch('line-separator', '---')

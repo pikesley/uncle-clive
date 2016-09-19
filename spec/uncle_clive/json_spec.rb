@@ -1,10 +1,8 @@
 module UncleClive
-  JSON_HEADERS = { 'HTTP_ACCEPT' => 'application/json' }
-
   describe App do
     context 'JSON' do
       specify 'single line' do
-        get '/json', nil, JSON_HEADERS
+        get '/font/json', nil, JSON_HEADERS
         expect(last_response).to be_ok
         expect(JSON.parse last_response.body).to eq (
           {
@@ -23,7 +21,7 @@ module UncleClive
       end
 
       specify 'multi-line' do
-        get '/ab---cd', nil, JSON_HEADERS
+        get '/font/ab---cd', nil, JSON_HEADERS
         expect(last_response).to be_ok
         expect(JSON.parse last_response.body).to eq (
           {
@@ -48,6 +46,27 @@ module UncleClive
             ]
           }
         )
+      end
+
+      context 'version 1' do
+        it 'still works' do
+          get '/json', nil, JSON_HEADERS
+          expect(last_response).to be_ok
+          expect(JSON.parse last_response.body).to eq (
+            {
+              'id' => 'json',
+              'data' => [
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+                [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+            }
+          )
+        end
       end
     end
   end
