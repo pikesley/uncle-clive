@@ -112,7 +112,7 @@ module UncleClive
 
     get '/:text' do
       # This is now deprecated
-      headers 'Access-Control-Allow-Origin' => '*' 
+      headers 'Access-Control-Allow-Origin' => '*'
 
       text = cleave params[:text], separator: params.fetch('line-separator', '---')
 
@@ -134,6 +134,11 @@ module UncleClive
           erb :table, layout: :default
         end
       end
+    end
+
+    not_found do
+      status 404
+      erb :nope, layout: :default
     end
 
     # start the server if ruby file executed directly

@@ -62,5 +62,11 @@ module UncleClive
         }
       )
     end
+
+    it 'has a 404' do
+      get '/fnord' do
+        expect(last_response).to eq 404
+      end
+    end
   end
 end
