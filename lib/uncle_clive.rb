@@ -27,6 +27,35 @@ module UncleClive
       end
     end
 
+    get '/:text' do
+      if request.env.dig('API-Version') == 1
+        headers 'Access-Control-Allow-Origin' => '*'
+
+        text = cleave params[:text], separator: params.fetch('line-separator', '---')
+
+        respond_to do |wants|
+          wants.json do
+            Nineteen::Eighty::Two::Formats::JSON.format text
+          end
+
+          wants.svg do
+            Nineteen::Eighty::Two::Formats::SVG.format text, {colour: "##{params.fetch('colour', '000000')}"}
+          end
+
+          wants.text do
+            Nineteen::Eighty::Two::Formats::Text.format text, {on: '()', off: '  '}
+          end
+
+          wants.html do
+            @content = Nineteen::Eighty::Two::Formats::HTMLTable.format text
+            erb :table, layout: :default
+          end
+        end
+      else
+        pass
+      end
+    end
+
     get '/font/?' do
       headers 'Access-Control-Allow-Origin' => '*'
 
@@ -110,31 +139,7 @@ module UncleClive
       end
     end
 
-    get '/:text' do
-      # This is now deprecated
-      headers 'Access-Control-Allow-Origin' => '*'
 
-      text = cleave params[:text], separator: params.fetch('line-separator', '---')
-
-      respond_to do |wants|
-        wants.json do
-          Nineteen::Eighty::Two::Formats::JSON.format text
-        end
-
-        wants.svg do
-          Nineteen::Eighty::Two::Formats::SVG.format text, {colour: "##{params.fetch('colour', '000000')}"}
-        end
-
-        wants.text do
-          Nineteen::Eighty::Two::Formats::Text.format text, {on: '()', off: '  '}
-        end
-
-        wants.html do
-          @content = Nineteen::Eighty::Two::Formats::HTMLTable.format text
-          erb :table, layout: :default
-        end
-      end
-    end
 
     not_found do
       status 404

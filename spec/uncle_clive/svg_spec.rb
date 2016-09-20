@@ -33,7 +33,7 @@ module UncleClive
 
       context 'version 1' do
         it 'still works' do
-          get '/svg', nil, SVG_HEADERS
+          get '/svg', nil, SVG_HEADERS.merge(V1_HEADERS)
           expect(last_response).to be_ok
           expect(last_response.body.split("\n")[9]).to eq "    <rect x='2' y='2' width='3' height='1' class='on' />"
         end

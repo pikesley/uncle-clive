@@ -15,7 +15,7 @@ module UncleClive
 
       context 'version 1' do
         it 'still works' do
-          get '/text', nil, TEXT_HEADERS
+          get '/text', nil, TEXT_HEADERS.merge(V1_HEADERS)
           expect(last_response).to be_ok
           expect(last_response.body.split("\n")[2]).to eq "    ()()()          ()()()        ()      ()        ()()()      "
         end

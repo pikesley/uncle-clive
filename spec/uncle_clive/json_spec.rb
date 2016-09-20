@@ -50,7 +50,7 @@ module UncleClive
 
       context 'version 1' do
         it 'still works' do
-          get '/json', nil, JSON_HEADERS
+          get '/json', nil, JSON_HEADERS.merge(V1_HEADERS)
           expect(last_response).to be_ok
           expect(JSON.parse last_response.body).to eq (
             {
