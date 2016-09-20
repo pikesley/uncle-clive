@@ -12,7 +12,7 @@ gem 'erubis'
 gem 'puma'
 gem 'kramdown'
 
-gem 'nineteen-eighty-two' #, path: '../nineteen-eighty-two'
+gem 'nineteen-eighty-two', path: '../nineteen-eighty-two'
 
 group :test do
   gem 'rspec'

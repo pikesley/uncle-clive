@@ -39,6 +39,31 @@ module UncleClive
           }
         )
       end
+
+      it 'serves ALL THE COLOURS' do
+        get '/colours/'
+        expect(last_response).to be_ok
+        expect(JSON.parse last_response.body, symbolize_names: true).to eq (
+          {
+            BLACK: "000000",
+            black: "000000",
+            BLUE: "0000ff",
+            blue: "0000bf",
+            CYAN: "00ffff",
+            cyan: "00bfbf",
+            GREEN: "00ff00",
+            green: "00bf00",
+            MAGENTA: "ff00ff",
+            magenta: "bf00bf",
+            RED: "ff0000",
+            red: "bf0000",
+            WHITE: "ffffff",
+            white: "bfbfbf",
+            YELLOW: "ffff00",
+            yellow: "bfbf00"
+          }
+        )
+      end
     end
   end
 end

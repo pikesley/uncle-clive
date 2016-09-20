@@ -27,8 +27,14 @@ module UncleClive
       end
     end
 
+    get '/font/?' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      Nineteen::Eighty::Two::Spectrum.to_h.to_json
+    end
+
     get '/font/:text' do
-      headers( 'Access-Control-Allow-Origin' => '*' )
+      headers 'Access-Control-Allow-Origin' => '*'
 
       text = cleave params[:text], separator: params.fetch('line-separator', '---')
 
@@ -52,6 +58,12 @@ module UncleClive
       end
     end
 
+    get '/colours/?' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      Nineteen::Eighty::Two::Colours.to_h.to_json
+    end
+
     get '/colours/:colour' do
       headers 'Access-Control-Allow-Origin' => '*'
 
@@ -70,6 +82,12 @@ module UncleClive
           }.to_json
         end
       end
+    end
+
+    get '/messages/?' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      Nineteen::Eighty::Two::Messages.to_h.to_json
     end
 
     get '/messages/:key' do
@@ -94,7 +112,7 @@ module UncleClive
 
     get '/:text' do
       # This is now deprecated
-      headers( 'Access-Control-Allow-Origin' => '*' )
+      headers 'Access-Control-Allow-Origin' => '*' 
 
       text = cleave params[:text], separator: params.fetch('line-separator', '---')
 

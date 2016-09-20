@@ -1,3 +1,9 @@
+PATH
+  remote: ../nineteen-eighty-two
+  specs:
+    nineteen-eighty-two (0.1.5)
+      erubis
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -108,8 +114,6 @@ GEM
     minitest (5.9.0)
     multi_json (1.12.1)
     nenv (0.3.0)
-    nineteen-eighty-two (0.1.4)
-      erubis
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -198,7 +202,7 @@ DEPENDENCIES
   guard-rspec
   jasmine
   kramdown
-  nineteen-eighty-two
+  nineteen-eighty-two!
   pry
   puma
   rack-conneg
