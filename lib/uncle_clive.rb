@@ -28,7 +28,42 @@ module UncleClive
     end
 
     get '/:text' do
-      headers( 'Access-Control-Allow-Origin' => '*' )
+      if request.env.dig('API-Version') == 1
+        headers 'Access-Control-Allow-Origin' => '*'
+
+        text = cleave params[:text], separator: params.fetch('line-separator', '---')
+
+        respond_to do |wants|
+          wants.json do
+            Nineteen::Eighty::Two::Formats::JSON.format text
+          end
+
+          wants.svg do
+            Nineteen::Eighty::Two::Formats::SVG.format text, {colour: "##{params.fetch('colour', '000000')}"}
+          end
+
+          wants.text do
+            Nineteen::Eighty::Two::Formats::Text.format text, {on: '()', off: '  '}
+          end
+
+          wants.html do
+            @content = Nineteen::Eighty::Two::Formats::HTMLTable.format text
+            erb :table, layout: :default
+          end
+        end
+      else
+        pass
+      end
+    end
+
+    get '/font/?' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      Nineteen::Eighty::Two::Spectrum.to_h.to_json
+    end
+
+    get '/font/:text' do
+      headers 'Access-Control-Allow-Origin' => '*'
 
       text = cleave params[:text], separator: params.fetch('line-separator', '---')
 
@@ -50,6 +85,65 @@ module UncleClive
           erb :table, layout: :default
         end
       end
+    end
+
+    get '/colours/?' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      Nineteen::Eighty::Two::Colours.to_h.to_json
+    end
+
+    get '/colours/:colour' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      colour = params.fetch 'colour'
+      hex = Nineteen::Eighty::Two::Colours[colour]
+
+      respond_to do |wants|
+        wants.text do
+          hex
+        end
+
+        wants.other do
+          {
+            'id' => colour,
+            'hex' => hex
+          }.to_json
+        end
+      end
+    end
+
+    get '/messages/?' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      Nineteen::Eighty::Two::Messages.to_h.to_json
+    end
+
+    get '/messages/:key' do
+      headers 'Access-Control-Allow-Origin' => '*'
+
+      key = params.fetch 'key'
+      message = Nineteen::Eighty::Two::Messages[key]
+
+      respond_to do |wants|
+        wants.text do
+          message
+        end
+
+        wants.other do
+          {
+            'id' => key,
+            'message' => message
+          }.to_json
+        end
+      end
+    end
+
+
+
+    not_found do
+      status 404
+      erb :nope, layout: :default
     end
 
     # start the server if ruby file executed directly

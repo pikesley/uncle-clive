@@ -7,7 +7,7 @@ module UncleClive
     end
 
     it 'can take a custom line-separator' do
-      get '/ab:cd?line-separator=:', nil, { 'HTTP_ACCEPT' => 'application/json' }
+      get '/font/ab:cd?line-separator=:', nil, JSON_HEADERS
       expect(last_response).to be_ok
       expect(JSON.parse last_response.body).to eq (
         {
@@ -32,6 +32,41 @@ module UncleClive
           ]
         }
       )
+    end
+
+    it 'serves ALL THE CHARACTERS' do
+      get '/font'
+      expect(last_response).to be_ok
+      expect(JSON.parse last_response.body).to include (
+        {
+          'a' => [
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 1, 1, 1, 1, 0, 0],
+            [0, 1, 0, 0, 0, 1, 0, 0],
+            [0, 0, 1, 1, 1, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0]
+          ],
+          'b' => [
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 1, 1, 0, 0],
+            [0, 0, 1, 0, 0, 0, 1, 0],
+            [0, 0, 1, 0, 0, 0, 1, 0],
+            [0, 0, 1, 1, 1, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0]
+          ]
+        }
+      )
+    end
+
+    it 'has a 404' do
+      get '/not/a/fnord' do
+        expect(last_response.status).to eq 404
+      end
     end
   end
 end
