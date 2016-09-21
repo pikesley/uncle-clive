@@ -4,7 +4,7 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/pikesley/uncle-clive.svg?style=flat-square)](https://codeclimate.com/github/pikesley/uncle-clive)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://pikesley.mit-license.org)
 
-![Uncle Clive](http://uncleclive.herokuapp.com/Uncle%20Clive.svg?colour=fa8100)
+![Uncle Clive](http://uncleclive.herokuapp.com/font/Uncle%20Clive.svg?colour=fa8100)
 
 ##Sinclair Spectrum Font as a Service
 
@@ -20,19 +20,19 @@ This has now been completely rewritten to make use of my new [1982](http://sam.p
 
 Uncle-Clive will respond to the following _Accept_ values with appropriate content:
 
-####`application/json` _[example](http://uncleclive.herokuapp.com/1982.json)_
+####`application/json` _[example](http://uncleclive.herokuapp.com/font/1982.json)_
 
 Content will be returned as a JSON object
 
-####`text/plain` _[example](http://uncleclive.herokuapp.com/1982.text)_
+####`text/plain` _[example](http://uncleclive.herokuapp.com/font/1982.text)_
 
 Content will be returned as plain text
 
-####`text/html` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
+####`text/html` _[example](http://uncleclive.herokuapp.com/font/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
 
 Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table
 
-####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg?colour=fa8100)_
+####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/font/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg?colour=fa8100)_
 
 Content will be returned as an SVG image
 
