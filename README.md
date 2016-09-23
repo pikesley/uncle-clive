@@ -6,7 +6,7 @@
 
 ![Uncle Clive](http://uncleclive.herokuapp.com/font/Uncle%20Clive.svg?colour=fa8100)
 
-##Sinclair Spectrum Font as a Service
+##Sinclair Spectrum Stuff as a Service
 
 _v2.0.0_
 
@@ -16,31 +16,73 @@ You may see a more pointless Thing-as-a-Service today, but I hope not. Uncle Cli
 
 This has now been completely rewritten to make use of my new [1982](http://sam.pikesley.org/projects/1982/) gem, and my [Skellington](http://sam.pikesley.org/projects/skellington/) Sinatra-app-generation tool
 
-###Content negotiation
+##API
+
+###`/font/:text`
+
+Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
+
+####Content negotiation
 
 Uncle-Clive will respond to the following _Accept_ values with appropriate content:
 
-####`application/json` _[example](http://uncleclive.herokuapp.com/font/1982.json)_
+#####`application/json` _[example](http://uncleclive.herokuapp.com/font/1982.json)_
 
 Content will be returned as a JSON object
 
-####`text/plain` _[example](http://uncleclive.herokuapp.com/font/1982.text)_
+#####`text/plain` _[example](http://uncleclive.herokuapp.com/font/1982.text)_
 
 Content will be returned as plain text
 
-####`text/html` _[example](http://uncleclive.herokuapp.com/font/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
+#####`text/html` _[example](http://uncleclive.herokuapp.com/font/%C2%A9%201982%20Sinclair%20Research%20Ltd)_
 
 Content will be returned as an HTML page with a Twitter Bootstrap Jumbotron containing the data rendered as a table
 
-####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/font/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg?colour=fa8100)_
+#####`image/svg+xml` _[example](http://uncleclive.herokuapp.com/font/%C2%A9%201982%20Sinclair%20Research%20Ltd.svg?colour=fa8100)_
 
 Content will be returned as an SVG image
 
-###API
+---
 
-####`/:text`
+###`/colours/:colour`
 
-Will return content of the form _:text_, rendered in the 1982 Sinclair Spectrum character set.
+Will return the hex value of the requested colour
+
+###`/colours/:COLOUR`
+
+Will return the BRIGHT variant of the requested colour
+
+####Content negotiation
+
+Uncle-Clive will respond to the following _Accept_ values with appropriate content:
+
+#####`application/json` _[example](http://uncleclive.herokuapp.com/colours/magenta)_
+
+Content will be returned as a JSON object (this is the default if no _Accept_ header is sent)
+
+#####`text/plain` _[example](http://uncleclive.herokuapp.com/colours/YELLOW.text)_
+
+The hex value will be returned as plain text
+
+---
+
+###`/messages/:key`
+
+Will return the Spectrum error message corresponding to _:key_
+
+####Content negotiation
+
+Uncle-Clive will respond to the following _Accept_ values with appropriate content:
+
+#####`application/json` _[example](http://uncleclive.herokuapp.com/messages/r)_
+
+Content will be returned as a JSON object (this is the default if no _Accept_ header is sent)
+
+#####`text/plain` _[example](http://uncleclive.herokuapp.com/messages/C.text)_
+
+The error message will be returned as plain text
+
+---
 
 ###History
 

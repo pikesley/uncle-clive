@@ -18,6 +18,16 @@ module UncleClive
         expect(last_response.body).to eq '1 - NEXT without FOR'
       end
 
+      it 'traps a duff key' do
+        get '/messages/CYAN', nil, JSON_HEADERS
+        expect(last_response.status).to eq 404
+        expect(JSON.parse last_response.body).to eq (
+          {
+            'error' => 'not found'
+          }
+        )
+      end
+
       it 'serves ALL THE MESSAGES' do
         get '/messages/'
         expect(last_response).to be_ok

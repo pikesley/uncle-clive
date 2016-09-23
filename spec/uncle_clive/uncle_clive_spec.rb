@@ -3,7 +3,7 @@ module UncleClive
     it 'has a homepage' do
       get '/'
       expect(last_response).to be_ok
-      expect(last_response.body).to match /Sinclair Spectrum Font as a Service/
+      expect(last_response.body).to match /Sinclair Spectrum Stuff as a Service/
     end
 
     it 'can take a custom line-separator' do
@@ -66,6 +66,7 @@ module UncleClive
     it 'has a 404' do
       get '/not/a/fnord' do
         expect(last_response.status).to eq 404
+        expect(last_response.body).to match /Back to the start/
       end
     end
   end

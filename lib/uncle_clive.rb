@@ -123,7 +123,12 @@ module UncleClive
       headers 'Access-Control-Allow-Origin' => '*'
 
       key = params.fetch 'key'
-      message = Nineteen::Eighty::Two::Messages[key]
+
+      begin
+        message = Nineteen::Eighty::Two::Messages[key]
+      rescue Nineteen::Eighty::Two::Exceptions::SpectrumException
+        halt 404
+      end
 
       respond_to do |wants|
         wants.text do
@@ -139,11 +144,24 @@ module UncleClive
       end
     end
 
-
-
     not_found do
       status 404
-      erb :nope, layout: :default
+
+      respond_to do |wants|
+        wants.json do
+          {
+            'error': 'not found'
+          }.to_json
+        end
+
+        wants.html do
+          erb :nope, layout: :default
+        end
+
+        wants.other do
+          '404 Not Found'
+        end
+      end
     end
 
     # start the server if ruby file executed directly
