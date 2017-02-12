@@ -4,7 +4,7 @@ rvm:
 deploy:
   provider: heroku
   api_key:
-    secure: WRhzdJ99lE1yejgTcTn5qHmMbt1JHEeVWwrRS6RXu81mNkE3/6xb4N61/bgJaoxl0quQk0+u9I5m3e1zWE1cnNIYLwIF1gKcp7zXrir5gmSXNqxXcxmQHkFNb6VWhSMVNBo7nCmL4Pde4kahg1Rm97bvIuHO0t6wRmw582fY6cU=
+    secure: V2tgenEjMVRf7ze3tdOMxlXN0xKSnbUmsy+xGm4BoEVTav7exj6JpnqrhYW9KqAZAYYSqTZ1CqZ8kM8rib2SJpdh7g7TShXxeH2p71FW+S5eld+r+4hqET0gqvDrexT8CJ3Syxh6/8HZOvNbzg90jAiXtmnfKI+Fc2yinKJRzGc=
   app: uncleclive
   on:
     repo: pikesley/uncle-clive
