@@ -24,5 +24,4 @@ group :test do
   gem 'jasmine'
   gem 'pry'
   gem 'actionpack'
-  gem 'rspec-glados', path: '../../rspec-glados'
 end
